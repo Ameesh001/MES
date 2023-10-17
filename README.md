@@ -1,2 +1,2 @@
-# MES
-Socks Menufactoring Execution Software for Textil Fort
+# POS
+Point of sale and inventory system
