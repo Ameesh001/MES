@@ -57,8 +57,64 @@ namespace PointOfSale.Utilities.Automapper
             );
             #endregion
 
-            #region Product
-            CreateMap<Product, VMProduct>()
+            #region Design
+            CreateMap<Design, VMDesign>()
+            .ForMember(destiny =>
+                destiny.IsActive,
+                opt => opt.MapFrom(source => source.IsActive == true ? 1 : 0)
+            );
+
+            CreateMap<VMDesign, Design>()
+            .ForMember(destiny =>
+                destiny.IsActive,
+                opt => opt.MapFrom(source => source.IsActive == 1 ? true : false)
+            );
+            #endregion
+
+            #region Artical
+            CreateMap<Artical, VMArtical>()
+            .ForMember(destiny =>
+                destiny.IsActive,
+                opt => opt.MapFrom(source => source.IsActive == true ? 1 : 0)
+            );
+
+            CreateMap<VMArtical, Artical>()
+            .ForMember(destiny =>
+                destiny.IsActive,
+                opt => opt.MapFrom(source => source.IsActive == 1 ? true : false)
+            );
+            #endregion
+
+            #region Colour
+            CreateMap<Colour, VMColour>()
+            .ForMember(destiny =>
+                destiny.IsActive,
+                opt => opt.MapFrom(source => source.IsActive == true ? 1 : 0)
+            );
+
+            CreateMap<VMColour, Colour>()
+            .ForMember(destiny =>
+                destiny.IsActive,
+                opt => opt.MapFrom(source => source.IsActive == 1 ? true : false)
+            );
+            #endregion
+
+            #region Style
+            CreateMap<Style, VMStyle>()
+			.ForMember(destiny =>
+				destiny.IsActive,
+				opt => opt.MapFrom(source => source.IsActive == true ? 1 : 0)
+			);
+
+			CreateMap<VMStyle, Style>()
+			.ForMember(destiny =>
+				destiny.IsActive,
+				opt => opt.MapFrom(source => source.IsActive == 1 ? true : false)
+			);
+			#endregion
+
+			#region Product
+			CreateMap<Product, VMProduct>()
             .ForMember(destiny =>
                 destiny.IsActive,
                 opt => opt.MapFrom(source => source.IsActive == true ? 1 : 0)

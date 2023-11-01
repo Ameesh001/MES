@@ -15744,10 +15744,11 @@ div.copied {
 .app-brand {
   position: relative;
   display: block;
-  background-color: #4c84ff;
+  /*background-color: #4c84ff;*/
 }
 
-.app-brand a {
+
+{
   display: flex;
   flex-direction: row;
   align-items: center;

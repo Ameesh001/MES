@@ -26,3 +26,17 @@ D:\PersonalProject\2022\POS\PointOfSale.Model\obj\Release\net6.0\refint\PointOfS
 D:\PersonalProject\2022\POS\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.pdb
 D:\PersonalProject\2022\POS\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.genruntimeconfig.cache
 D:\PersonalProject\2022\POS\PointOfSale.Model\obj\Release\net6.0\ref\PointOfSale.Model.dll
+D:\Umais\MyWorking\MES\PointOfSale.Model\bin\Release\net6.0\PointOfSale.Model.deps.json
+D:\Umais\MyWorking\MES\PointOfSale.Model\bin\Release\net6.0\PointOfSale.Model.runtimeconfig.json
+D:\Umais\MyWorking\MES\PointOfSale.Model\bin\Release\net6.0\PointOfSale.Model.dll
+D:\Umais\MyWorking\MES\PointOfSale.Model\bin\Release\net6.0\PointOfSale.Model.pdb
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.csproj.AssemblyReference.cache
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.AssemblyInfoInputs.cache
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.AssemblyInfo.cs
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.csproj.CoreCompileInputs.cache
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.dll
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\refint\PointOfSale.Model.dll
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.pdb
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\PointOfSale.Model.genruntimeconfig.cache
+D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Release\net6.0\ref\PointOfSale.Model.dll
