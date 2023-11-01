@@ -18,7 +18,11 @@ namespace PointOfSale.Data.DBContext
         }
 
         public virtual DbSet<Category> Categories { get; set; } = null!;
-        public virtual DbSet<CorrelativeNumber> CorrelativeNumbers { get; set; } = null!;
+		public virtual DbSet<Style> Styles { get; set; } = null!;
+		public virtual DbSet<Design> Designs { get; set; } = null!;        
+        public virtual DbSet<Artical> Articals { get; set; } = null!;
+        public virtual DbSet<Colour> Colours { get; set; } = null!;
+		public virtual DbSet<CorrelativeNumber> CorrelativeNumbers { get; set; } = null!;
         public virtual DbSet<DetailSale> DetailSales { get; set; } = null!;
         public virtual DbSet<Menu> Menus { get; set; } = null!;
         public virtual DbSet<Negocio> Negocios { get; set; } = null!;
@@ -41,6 +45,94 @@ namespace PointOfSale.Data.DBContext
                     .HasName("PK__Category__79D361B6930E16FF");
 
                 entity.ToTable("Category");
+
+                entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("description");
+
+                entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.RegistrationDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("registrationDate")
+                    .HasDefaultValueSql("(getdate())");
+            });
+
+            modelBuilder.Entity<Design>(entity =>
+            {
+                entity.HasKey(e => e.IdCategory)
+                    .HasName("PK__Category__79D361B6930E16FF");
+
+                entity.ToTable("Design");
+
+                entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("description");
+
+                entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.RegistrationDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("registrationDate")
+                    .HasDefaultValueSql("(getdate())");
+            });
+
+            modelBuilder.Entity<Artical>(entity =>
+            {
+                entity.HasKey(e => e.IdCategory)
+                    .HasName("PK__Category__79D361B6930E16FG");
+
+                entity.ToTable("Artical");
+
+                entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("description");
+
+                entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.RegistrationDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("registrationDate")
+                    .HasDefaultValueSql("(getdate())");
+            });
+
+            modelBuilder.Entity<Colour>(entity =>
+			{
+				entity.HasKey(e => e.IdCategory)
+					.HasName("PK__Category__79D361B6930E16FG");
+
+				entity.ToTable("Colour");
+
+				entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+
+				entity.Property(e => e.Description)
+					.HasMaxLength(50)
+					.IsUnicode(false)
+					.HasColumnName("description");
+
+				entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+				entity.Property(e => e.RegistrationDate)
+					.HasColumnType("datetime")
+					.HasColumnName("registrationDate")
+					.HasDefaultValueSql("(getdate())");
+			});
+
+			modelBuilder.Entity<Style>(entity =>
+            {
+                entity.HasKey(e => e.IdCategory)
+                    .HasName("PK__Category__79D361B6930E16FG");
+
+				entity.ToTable("Style");
 
                 entity.Property(e => e.IdCategory).HasColumnName("idCategory");
 
