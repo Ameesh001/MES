@@ -36,6 +36,8 @@ builder.Services.AddScoped<IRolService, RolService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IArticalService, ArticalService>();
 builder.Services.AddScoped<IStyleService, StyleService>();
+builder.Services.AddScoped<IBankService, BankService>();
+builder.Services.AddScoped<ISizeService, SizeService>();
 builder.Services.AddScoped<IDesignService, DesignService>();
 builder.Services.AddScoped<IColourService, ColourService>();
 builder.Services.AddScoped<IProductService, ProductService>();

@@ -57,8 +57,36 @@ namespace PointOfSale.Utilities.Automapper
             );
             #endregion
 
-            #region Design
-            CreateMap<Design, VMDesign>()
+            #region Bank
+            CreateMap<Bank, VMBank>()
+            .ForMember(destiny =>
+                destiny.IsActive,
+                opt => opt.MapFrom(source => source.IsActive == true ? 1 : 0)
+            );
+
+            CreateMap<VMBank, Bank>()
+            .ForMember(destiny =>
+                destiny.IsActive,
+                opt => opt.MapFrom(source => source.IsActive == 1 ? true : false)
+            );
+			#endregion
+
+			#region Size
+			CreateMap<Size, VMSize>()
+			.ForMember(destiny =>
+				destiny.IsActive,
+				opt => opt.MapFrom(source => source.IsActive == true ? 1 : 0)
+			);
+
+			CreateMap<VMSize, Size>()
+			.ForMember(destiny =>
+				destiny.IsActive,
+				opt => opt.MapFrom(source => source.IsActive == 1 ? true : false)
+			);
+			#endregion
+
+			#region Design
+			CreateMap<Design, VMDesign>()
             .ForMember(destiny =>
                 destiny.IsActive,
                 opt => opt.MapFrom(source => source.IsActive == true ? 1 : 0)

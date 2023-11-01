@@ -18,8 +18,11 @@ namespace PointOfSale.Data.DBContext
         }
 
         public virtual DbSet<Category> Categories { get; set; } = null!;
+		public virtual DbSet<Size> Sizes { get; set; } = null!;
 		public virtual DbSet<Style> Styles { get; set; } = null!;
-		public virtual DbSet<Design> Designs { get; set; } = null!;        
+
+        public virtual DbSet<Bank> Banks { get; set; } = null!;
+        public virtual DbSet<Design> Designs { get; set; } = null!;        
         public virtual DbSet<Artical> Articals { get; set; } = null!;
         public virtual DbSet<Colour> Colours { get; set; } = null!;
 		public virtual DbSet<CorrelativeNumber> CorrelativeNumbers { get; set; } = null!;
@@ -45,6 +48,50 @@ namespace PointOfSale.Data.DBContext
                     .HasName("PK__Category__79D361B6930E16FF");
 
                 entity.ToTable("Category");
+
+                entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("description");
+
+                entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+                entity.Property(e => e.RegistrationDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("registrationDate")
+                    .HasDefaultValueSql("(getdate())");
+            });
+
+			modelBuilder.Entity<Size>(entity =>
+			{
+				entity.HasKey(e => e.IdCategory)
+					.HasName("PK__Category__79D361B6930E16FF");
+
+				entity.ToTable("Size");
+
+				entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+
+				entity.Property(e => e.Description)
+					.HasMaxLength(50)
+					.IsUnicode(false)
+					.HasColumnName("description");
+
+				entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+				entity.Property(e => e.RegistrationDate)
+					.HasColumnType("datetime")
+					.HasColumnName("registrationDate")
+					.HasDefaultValueSql("(getdate())");
+			});
+
+			modelBuilder.Entity<Bank>(entity =>
+            {
+                entity.HasKey(e => e.IdCategory)
+                    .HasName("PK__Category__79D361B6930E16FF");
+
+                entity.ToTable("Bank");
 
                 entity.Property(e => e.IdCategory).HasColumnName("idCategory");
 

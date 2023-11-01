@@ -16,17 +16,21 @@ namespace PointOfSale.Controllers
     public class MastersController : Controller
     {
         private readonly IStyleService _styleService;
+		private readonly ISizeService _sizeService;
 		private readonly IColourService _colourService;
         private readonly IDesignService _designService;
+        private readonly IBankService _bankService;
 
         private readonly IArticalService _articalService;
         private readonly IMapper _mapper;
-        public MastersController(IDesignService designService ,IStyleService categoryService, IColourService colourService, IArticalService articalService, IMapper mapper)
+        public MastersController(ISizeService sizeService,IBankService bankService, IDesignService designService ,IStyleService categoryService, IColourService colourService, IArticalService articalService, IMapper mapper)
         {
             _styleService = categoryService;
 			_colourService = colourService;
             _articalService = articalService;
             _designService = designService;
+            _bankService = bankService;
+            _sizeService = sizeService;
             _mapper = mapper;
         }
 
@@ -344,7 +348,162 @@ namespace PointOfSale.Controllers
 
             return StatusCode(StatusCodes.Status200OK, gResponse);
         }
-        ///////////////////////////////////</Design Working>//////////////////////////////////////
+		///////////////////////////////////</Design Working>//////////////////////////////////////
+		///////////////////////////////////<Bank Working>//////////////////////////////////////
+
+		public IActionResult Bank()
+		{
+			return View();
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> GetBanks()
+		{
+			List<VMBank> VMBankList = _mapper.Map<List<VMBank>>(await _bankService.List());
+			return StatusCode(StatusCodes.Status200OK, new { data = VMBankList });
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> CreateBank([FromBody] VMBank model)
+		{
+			GenericResponse<VMBank> gResponse = new GenericResponse<VMBank>();
+			try
+			{
+				Bank category_created = await _bankService.Add(_mapper.Map<Bank>(model));
+
+				model = _mapper.Map<VMBank>(category_created);
+
+				gResponse.State = true;
+				gResponse.Object = model;
+			}
+			catch (Exception ex)
+			{
+				gResponse.State = false;
+				gResponse.Message = ex.Message;
+			}
+
+			return StatusCode(StatusCodes.Status200OK, gResponse);
+		}
+
+		[HttpPut]
+		public async Task<IActionResult> UpdateBank([FromBody] VMBank model)
+		{
+			GenericResponse<VMBank> gResponse = new GenericResponse<VMBank>();
+			try
+			{
+
+				Bank edited_category = await _bankService.Edit(_mapper.Map<Bank>(model));
+
+				model = _mapper.Map<VMBank>(edited_category);
+
+				gResponse.State = true;
+				gResponse.Object = model;
+			}
+			catch (Exception ex)
+			{
+				gResponse.State = false;
+				gResponse.Message = ex.Message;
+			}
+
+			return StatusCode(StatusCodes.Status200OK, gResponse);
+		}
+
+
+		[HttpDelete]
+		public async Task<IActionResult> DeleteBank(int idCategory)
+		{
+			GenericResponse<string> gResponse = new GenericResponse<string>();
+			try
+			{
+				gResponse.State = await _bankService.Delete(idCategory);
+			}
+			catch (Exception ex)
+			{
+				gResponse.State = false;
+				gResponse.Message = ex.Message;
+			}
+
+			return StatusCode(StatusCodes.Status200OK, gResponse);
+		}
+		///////////////////////////////////</Bank Working>//////////////////////////////////////
+
+		///////////////////////////////////<Bank Working>//////////////////////////////////////
+
+		public IActionResult Size()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetSizes()
+        {
+            List<VMSize> VMSizeList = _mapper.Map<List<VMSize>>(await _sizeService.List());
+            return StatusCode(StatusCodes.Status200OK, new { data = VMSizeList });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateSize([FromBody] VMSize model)
+        {
+            GenericResponse<VMSize> gResponse = new GenericResponse<VMSize>();
+            try
+            {
+                Size category_created = await _sizeService.Add(_mapper.Map<Size>(model));
+
+                model = _mapper.Map<VMSize>(category_created);
+
+                gResponse.State = true;
+                gResponse.Object = model;
+            }
+            catch (Exception ex)
+            {
+                gResponse.State = false;
+                gResponse.Message = ex.Message;
+            }
+
+            return StatusCode(StatusCodes.Status200OK, gResponse);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateSize([FromBody] VMSize model)
+        {
+            GenericResponse<VMSize> gResponse = new GenericResponse<VMSize>();
+            try
+            {
+
+                Size edited_category = await _sizeService.Edit(_mapper.Map<Size>(model));
+
+                model = _mapper.Map<VMSize>(edited_category);
+
+                gResponse.State = true;
+                gResponse.Object = model;
+            }
+            catch (Exception ex)
+            {
+                gResponse.State = false;
+                gResponse.Message = ex.Message;
+            }
+
+            return StatusCode(StatusCodes.Status200OK, gResponse);
+        }
+
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteSize(int idCategory)
+        {
+            GenericResponse<string> gResponse = new GenericResponse<string>();
+            try
+            {
+                gResponse.State = await _sizeService.Delete(idCategory);
+            }
+            catch (Exception ex)
+            {
+                gResponse.State = false;
+                gResponse.Message = ex.Message;
+            }
+
+            return StatusCode(StatusCodes.Status200OK, gResponse);
+        }
+        ///////////////////////////////////</Bank Working>//////////////////////////////////////
 
     }
 }

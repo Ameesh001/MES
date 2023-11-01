@@ -113,12 +113,20 @@
       "PackagePath": "staticwebassets\\js\\views\\MastersArtical.js"
     },
     {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersBank.js",
+      "PackagePath": "staticwebassets\\js\\views\\MastersBank.js"
+    },
+    {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersColour.js",
       "PackagePath": "staticwebassets\\js\\views\\MastersColour.js"
     },
     {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersDesign.js",
       "PackagePath": "staticwebassets\\js\\views\\MastersDesign.js"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersSize.js",
+      "PackagePath": "staticwebassets\\js\\views\\MastersSize.js"
     },
     {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersStyle.js",

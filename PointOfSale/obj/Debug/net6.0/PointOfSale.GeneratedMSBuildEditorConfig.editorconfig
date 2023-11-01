@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PointOfSale
 build_property.RootNamespace = PointOfSale
 build_property.ProjectDir = D:\Umais\MyWorking\MES\PointOfSale\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -52,12 +54,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xBcnRpY2FsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Bank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xCYW5rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Colour.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xDb2xvdXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Design.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xEZXNpZ24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Size.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xTaXplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Style.cshtml]

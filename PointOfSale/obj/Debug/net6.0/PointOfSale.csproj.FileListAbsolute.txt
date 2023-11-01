@@ -1946,3 +1946,4 @@ D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\refint\PointOfSale.dll
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.pdb
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.genruntimeconfig.cache
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\ref\PointOfSale.dll
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.sourcelink.json
