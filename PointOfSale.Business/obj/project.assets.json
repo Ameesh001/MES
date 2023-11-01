@@ -1947,19 +1947,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\kk\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Umais\\MyWorking\\POS\\PointOfSale.Business\\PointOfSale.Business.csproj",
+      "projectUniqueName": "D:\\Umais\\MyWorking\\MES\\PointOfSale.Business\\PointOfSale.Business.csproj",
       "projectName": "PointOfSale.Business",
-      "projectPath": "D:\\Umais\\MyWorking\\POS\\PointOfSale.Business\\PointOfSale.Business.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\Umais\\MyWorking\\POS\\PointOfSale.Business\\obj\\",
+      "projectPath": "D:\\Umais\\MyWorking\\MES\\PointOfSale.Business\\PointOfSale.Business.csproj",
+      "packagesPath": "C:\\Users\\kk\\.nuget\\packages\\",
+      "outputPath": "D:\\Umais\\MyWorking\\MES\\PointOfSale.Business\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1973,11 +1978,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Umais\\MyWorking\\POS\\PointOfSale.Data\\PointOfSale.Data.csproj": {
-              "projectPath": "D:\\Umais\\MyWorking\\POS\\PointOfSale.Data\\PointOfSale.Data.csproj"
+            "D:\\Umais\\MyWorking\\MES\\PointOfSale.Data\\PointOfSale.Data.csproj": {
+              "projectPath": "D:\\Umais\\MyWorking\\MES\\PointOfSale.Data\\PointOfSale.Data.csproj"
             },
-            "D:\\Umais\\MyWorking\\POS\\PointOfSale.Model\\PointOfSale.Model.csproj": {
-              "projectPath": "D:\\Umais\\MyWorking\\POS\\PointOfSale.Model\\PointOfSale.Model.csproj"
+            "D:\\Umais\\MyWorking\\MES\\PointOfSale.Model\\PointOfSale.Model.csproj": {
+              "projectPath": "D:\\Umais\\MyWorking\\MES\\PointOfSale.Model\\PointOfSale.Model.csproj"
             }
           }
         }
@@ -2007,7 +2012,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
