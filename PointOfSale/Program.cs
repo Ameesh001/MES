@@ -34,6 +34,7 @@ builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRolService, RolService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IArticalService, ArticalService>();
 builder.Services.AddScoped<IStyleService, StyleService>();
 builder.Services.AddScoped<IBankService, BankService>();

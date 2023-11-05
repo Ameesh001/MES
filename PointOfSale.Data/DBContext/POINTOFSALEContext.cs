@@ -21,7 +21,9 @@ namespace PointOfSale.Data.DBContext
 		public virtual DbSet<Size> Sizes { get; set; } = null!;
 		public virtual DbSet<Style> Styles { get; set; } = null!;
 
-        public virtual DbSet<Bank> Banks { get; set; } = null!;
+		public virtual DbSet<Customer> Customers { get; set; } = null!;
+
+		public virtual DbSet<Bank> Banks { get; set; } = null!;
         public virtual DbSet<Design> Designs { get; set; } = null!;        
         public virtual DbSet<Artical> Articals { get; set; } = null!;
         public virtual DbSet<Colour> Colours { get; set; } = null!;
@@ -363,19 +365,19 @@ namespace PointOfSale.Data.DBContext
                     .HasColumnName("urlLogo");
             });
 
-            modelBuilder.Entity<Product>(entity =>
-            {
-                entity.HasKey(e => e.IdProduct)
-                    .HasName("PK__Product__5EEC79D18F8E118B");
+			modelBuilder.Entity<Product>(entity =>
+			{
+				entity.HasKey(e => e.IdProduct)
+					.HasName("PK__Product__5EEC79D18F8E118B");
 
-                entity.ToTable("Product");
+				entity.ToTable("Product");
 
-                entity.Property(e => e.IdProduct).HasColumnName("idProduct");
+				entity.Property(e => e.IdProduct).HasColumnName("idProduct");
 
-                entity.Property(e => e.BarCode)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("barCode");
+				entity.Property(e => e.BarCode)
+					.HasMaxLength(50)
+					.IsUnicode(false)
+					.HasColumnName("barCode");
 
 				entity.Property(e => e.CrtnSize)
 					.HasMaxLength(50)
@@ -383,26 +385,75 @@ namespace PointOfSale.Data.DBContext
 					.HasColumnName("crtnsize");
 
 				entity.Property(e => e.Brand)
+					.HasMaxLength(50)
+					.IsUnicode(false)
+					.HasColumnName("brand");
+
+				entity.Property(e => e.Description)
+					.HasMaxLength(100)
+					.IsUnicode(false)
+					.HasColumnName("description");
+
+				entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+
+				entity.Property(e => e.IsActive).HasColumnName("isActive");
+
+				entity.Property(e => e.Photo).HasColumnName("photo");
+
+				entity.Property(e => e.Price)
+					.HasColumnType("decimal(10, 2)")
+					.HasColumnName("price");
+
+				entity.Property(e => e.Quantity).HasColumnName("quantity");
+
+				entity.Property(e => e.RegistrationDate)
+					.HasColumnType("datetime")
+					.HasColumnName("registrationDate")
+					.HasDefaultValueSql("(getdate())");
+
+				entity.HasOne(d => d.IdCategoryNavigation)
+					.WithMany(p => p.Products)
+					.HasForeignKey(d => d.IdCategory)
+					.HasConstraintName("FK__Product__idCateg__22AA2996");
+			});
+
+			modelBuilder.Entity<Customer>(entity =>
+            {
+                entity.HasKey(e => e.IdProduct)
+                    .HasName("PK__Product__5EEC79D18F8E118B");
+
+                entity.ToTable("Customer");
+
+                entity.Property(e => e.IdProduct).HasColumnName("idProduct");
+
+                entity.Property(e => e.CusCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
-                    .HasColumnName("brand");
+                    .HasColumnName("CusCode");
 
-                entity.Property(e => e.Description)
+				entity.Property(e => e.Address)
+					.HasMaxLength(50)
+					.IsUnicode(false)
+					.HasColumnName("crtnsize");
+
+				entity.Property(e => e.invoiceName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("invoiceName");
+
+                entity.Property(e => e.ShortName)
                     .HasMaxLength(100)
                     .IsUnicode(false)
-                    .HasColumnName("description");
+                    .HasColumnName("shortName");
 
-                entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+                entity.Property(e => e.IdBank).HasColumnName("IdBank");
 
                 entity.Property(e => e.IsActive).HasColumnName("isActive");
 
-                entity.Property(e => e.Photo).HasColumnName("photo");
+                entity.Property(e => e.Photo).HasColumnName("photo");              
 
-                entity.Property(e => e.Price)
-                    .HasColumnType("decimal(10, 2)")
-                    .HasColumnName("price");
-
-                entity.Property(e => e.Quantity).HasColumnName("quantity");
+				entity.Property(e => e.Mobile).HasColumnName("mobile");
+				entity.Property(e => e.PhoneNo).HasColumnName("phoneNo");
 
                 entity.Property(e => e.RegistrationDate)
                     .HasColumnType("datetime")
@@ -410,8 +461,8 @@ namespace PointOfSale.Data.DBContext
                     .HasDefaultValueSql("(getdate())");
 
                 entity.HasOne(d => d.IdCategoryNavigation)
-                    .WithMany(p => p.Products)
-                    .HasForeignKey(d => d.IdCategory)
+                    .WithMany(p => p.Customers)
+                    .HasForeignKey(d => d.IdBank)
                     .HasConstraintName("FK__Product__idCateg__22AA2996");
             });
 

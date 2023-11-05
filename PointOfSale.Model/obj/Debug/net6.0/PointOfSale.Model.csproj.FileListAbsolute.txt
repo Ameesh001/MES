@@ -7,7 +7,6 @@ D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Debug\net6.0\PointOfSale.Model.Gene
 D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Debug\net6.0\PointOfSale.Model.AssemblyInfoInputs.cache
 D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Debug\net6.0\PointOfSale.Model.AssemblyInfo.cs
 D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Debug\net6.0\PointOfSale.Model.csproj.CoreCompileInputs.cache
-D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Debug\net6.0\PointOfSale.Model.sourcelink.json
 D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Debug\net6.0\PointOfSale.Model.dll
 D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Debug\net6.0\refint\PointOfSale.Model.dll
 D:\Umais\MyWorking\MES\PointOfSale.Model\obj\Debug\net6.0\PointOfSale.Model.pdb

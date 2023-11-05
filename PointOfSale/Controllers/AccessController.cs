@@ -57,8 +57,8 @@ namespace PointOfSale.Controllers
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), properties);
 
-            return RedirectToAction("DashBoard", "Admin");
-          //  return RedirectToAction("Stock", "Inventory");
+           // return RedirectToAction("DashBoard", "Admin");
+            return RedirectToAction("Customers", "Setup");
 
 
         }

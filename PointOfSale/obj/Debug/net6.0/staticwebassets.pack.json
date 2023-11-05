@@ -149,6 +149,10 @@
       "PackagePath": "staticwebassets\\js\\views\\SalesNewSale.js"
     },
     {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\SetupCustomers.js",
+      "PackagePath": "staticwebassets\\js\\views\\SetupCustomers.js"
+    },
+    {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\adminUsers.js",
       "PackagePath": "staticwebassets\\js\\views\\adminUsers.js"
     },

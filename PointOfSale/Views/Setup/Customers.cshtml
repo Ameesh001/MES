@@ -1,0 +1,177 @@
+﻿@{
+	ViewData["Title"] = "Customers";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section StylesPOS{
+
+	<link href="~/plugins/data-tables/datatables.bootstrap4.min.css" rel="stylesheet">
+	<link href="~/plugins/data-tables/buttons.bootstrap4.min.css" rel="stylesheet">
+	<link href="~/plugins/data-tables/responsive.datatables.min.css" rel="stylesheet">
+
+
+}
+
+<div class="row">
+	<div class="col-sm-12">
+
+		<div class="card card-default">
+			<div class="card-header card-header-border-bottom">
+				<div class="row justify-content-between w-100">
+					<div class="col-sm-4">
+						<h4>Customers</h4>
+					</div>
+					<div class="col-sm-4 text-right">
+						<button class="btn btn-success" id="btnNewProduct">New Customer</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col-sm-12">
+						<table id="tbData" class="table" style="width:100%">
+							<thead>
+								<tr>
+									<th>ProcessDate</th>
+									<th>CustomerID</th>
+									<th>Customer</th>
+									<th>InvoiceName</th>
+									<th>ShortName</th>
+									<th>Bank</th>
+									<th>PhoneNo.</th>
+									<th>Debit</th>	
+									<th>Opening</th>
+									<th>Photo</th>
+									<th>Action</th>
+									<th>State</th>
+									<th>MobileNo.</th>
+								
+									<th>Address</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Grid Modal -->
+<div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-labelledby="exampleModalGrid" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalGridTitle">Customer detail</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<input type="hidden" value="0" id="txtId">
+					<div class="row">
+						<div class="col-sm-8">
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label for="txCusCode">Customer</label>
+									<input type="text" class="form-control form-control-sm input-validate" id="txtCusCode" name="CusCode">
+								</div>
+								<div class="form-group col-sm-6">
+									<label for="txtInvoice">Invoice Name</label>
+									<input type="text" class="form-control form-control-sm input-validate" id="txtInvoice" name="InvoiceName">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label for="txtShortName">Short Name</label>
+									<input type="text" class="form-control form-control-sm input-validate" id="txtShortName" name="ShortName">
+								</div>
+								<div class="form-group col-sm-6">
+									<label for="cboBank">Bank</label>
+									<select class="form-control form-control-sm" id="cboBank">
+									</select>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label for="txtMobile">Mobile</label>
+									<input type="text" class="form-control form-control-sm input-validate" id="txtMobile" name="Mobile">
+								</div>
+								<div class="form-group col-sm-6">
+									<label for="txtPhoneNo">Phone No.</label>
+									<input type="text" class="form-control form-control-sm input-validate" id="txtPhoneNo" name="PhoneNo">
+								</div>
+							</div>
+							<div class="form-row">
+								
+								<div class="form-group col-sm-6">
+									<label for="txtOpenBalance">Opening Balance</label>
+									<input type="text" class="form-control form-control-sm input-validate" id="txtOpenBalance" name="OpeningBalance">
+								</div>
+								<div class="form-group col-sm-6">
+									<label for="txtDebitd">Debit</label>
+									<input type="text" class="form-control form-control-sm input-validate" id="txtDebit" name="Debit">
+								</div>
+
+							</div>
+							<div class="form-row">
+								
+
+								<div class="form-group col-sm-12">
+									<label for="txtAddress">Address</label>
+									<input type="text" class="form-control form-control-sm input-validate" id="txtAddress" name="Address">
+								</div>
+
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label for="cboState">State</label>
+									<select class="form-control form-control-sm" id="cboState">
+										<option value="1">Active</option>
+										<option value="0">Inactive</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label for="txtPhoto">Photo</label>
+									<input class="form-control-file" type="file" id="txtPhoto" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<img id="imgProduct" style="max-width:200px;" src="" class="rounded mx-auto d-block" alt="Photo Customer">
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="btnSave">Save Changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+@section Scripts{
+	<script src="~/plugins/data-tables/jquery.datatables.min.js"></script>
+	<script src="~/plugins/data-tables/datatables.bootstrap4.min.js"></script>
+	<script src="~/plugins/data-tables/datatables.responsive.min.js"></script>
+
+
+	<script src="~/plugins/data-tables/dataTables.buttons.min.js"></script>
+	<script src="~/plugins/data-tables/buttons.bootstrap4.min.js"></script>
+	<script src="~/plugins/data-tables/jszip.min.js"></script>
+	<script src="~/plugins/data-tables/buttons.html5.min.js"></script>
+	<script src="~/plugins/data-tables/buttons.print.min.js"></script>
+
+	<script src="~/js/views/SetupCustomers.js"></script>
+}

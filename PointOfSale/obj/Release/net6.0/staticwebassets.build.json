@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ua4ned+9tziE5F+6SX0ppp+gqf9A1lzzVLp1QuF+Bw4=",
+  "Hash": "s+QOPIe+cc8/c+RkNII/ZNp8Bdmlp+1/l8onZqUfmp8=",
   "Source": "PointOfSale",
   "BasePath": "_content/PointOfSale",
   "Mode": "Default",
@@ -527,6 +527,23 @@
       "OriginalItemSpec": "wwwroot\\js\\views\\MastersArtical.js"
     },
     {
+      "Identity": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersBank.js",
+      "SourceId": "PointOfSale",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\",
+      "BasePath": "_content/PointOfSale",
+      "RelativePath": "js/views/MastersBank.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\views\\MastersBank.js"
+    },
+    {
       "Identity": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersColour.js",
       "SourceId": "PointOfSale",
       "SourceType": "Discovered",
@@ -559,6 +576,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\views\\MastersDesign.js"
+    },
+    {
+      "Identity": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersSize.js",
+      "SourceId": "PointOfSale",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\",
+      "BasePath": "_content/PointOfSale",
+      "RelativePath": "js/views/MastersSize.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\views\\MastersSize.js"
     },
     {
       "Identity": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\MastersStyle.js",
@@ -644,6 +678,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\views\\SalesNewSale.js"
+    },
+    {
+      "Identity": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\SetupCustomers.js",
+      "SourceId": "PointOfSale",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\",
+      "BasePath": "_content/PointOfSale",
+      "RelativePath": "js/views/SetupCustomers.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\views\\SetupCustomers.js"
     },
     {
       "Identity": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\plugins\\bootstrap\\css\\bootstrap.css",

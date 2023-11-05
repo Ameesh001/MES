@@ -52,12 +52,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xBcnRpY2FsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Bank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xCYW5rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Colour.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xDb2xvdXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Design.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xEZXNpZ24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Size.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xTaXplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Style.cshtml]
@@ -74,6 +82,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Sales/SalesHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcU2FsZXNIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Setup/Customers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dXBcQ3VzdG9tZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/Components/MenuUser/Default.cshtml]

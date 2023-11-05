@@ -1667,15 +1667,6 @@ G:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\refint\PointOfSale.dll
 G:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.pdb
 G:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.genruntimeconfig.cache
 G:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\ref\PointOfSale.dll
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.csproj.AssemblyReference.cache
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.GeneratedMSBuildEditorConfig.editorconfig
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.AssemblyInfoInputs.cache
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.AssemblyInfo.cs
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.csproj.CoreCompileInputs.cache
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.MvcApplicationPartsAssemblyInfo.cs
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.MvcApplicationPartsAssemblyInfo.cache
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.RazorAssemblyInfo.cache
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.RazorAssemblyInfo.cs
 D:\Umais\MyWorking\MES\PointOfSale\bin\Debug\net6.0\appsettings.Development.json
 D:\Umais\MyWorking\MES\PointOfSale\bin\Debug\net6.0\appsettings.json
 D:\Umais\MyWorking\MES\PointOfSale\bin\Debug\net6.0\PointOfSale.staticwebassets.runtime.json
@@ -1930,6 +1921,15 @@ D:\Umais\MyWorking\MES\PointOfSale\bin\Debug\net6.0\PointOfSale.Model.dll
 D:\Umais\MyWorking\MES\PointOfSale\bin\Debug\net6.0\PointOfSale.Business.pdb
 D:\Umais\MyWorking\MES\PointOfSale\bin\Debug\net6.0\PointOfSale.Model.pdb
 D:\Umais\MyWorking\MES\PointOfSale\bin\Debug\net6.0\PointOfSale.Data.pdb
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.csproj.AssemblyReference.cache
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.GeneratedMSBuildEditorConfig.editorconfig
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.AssemblyInfoInputs.cache
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.AssemblyInfo.cs
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.csproj.CoreCompileInputs.cache
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.MvcApplicationPartsAssemblyInfo.cs
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.MvcApplicationPartsAssemblyInfo.cache
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.RazorAssemblyInfo.cache
+D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.RazorAssemblyInfo.cs
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\staticwebassets\msbuild.PointOfSale.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\staticwebassets\msbuild.build.PointOfSale.props
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.PointOfSale.props
@@ -1946,4 +1946,3 @@ D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\refint\PointOfSale.dll
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.pdb
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.genruntimeconfig.cache
 D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\ref\PointOfSale.dll
-D:\Umais\MyWorking\MES\PointOfSale\obj\Debug\net6.0\PointOfSale.sourcelink.json

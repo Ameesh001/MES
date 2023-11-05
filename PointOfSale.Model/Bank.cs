@@ -7,7 +7,7 @@ namespace PointOfSale.Model
     {
         public Bank()
         {
-            //Products = new HashSet<Product>();
+			Customers = new HashSet<Customer>();
         }
 
         public int IdCategory { get; set; }
@@ -15,6 +15,6 @@ namespace PointOfSale.Model
         public bool? IsActive { get; set; }
         public DateTime? RegistrationDate { get; set; }
 
-        //public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }
