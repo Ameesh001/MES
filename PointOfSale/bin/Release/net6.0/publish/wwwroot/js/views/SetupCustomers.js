@@ -3,15 +3,15 @@ let rowSelected;
 
 const BASIC_MODEL = {
     idProduct: 0,
-    barCode: "",
-    brand: "",
-    description: "",
-    idCategory: 0,
-    quantity: "",
-    price: "",
-    wsPrice: "",
-    invoiceRate: "",
-    crtnSize: "",
+    cusCode: "",
+    invoiceName: "",
+    shortName: "",
+    idBank: 0,
+    phoneNo: "",
+    mobile: "",
+    openingBalance: "",
+    debit: "",
+    address: "",
     isActive: 1,
     photo: ""
 }
@@ -26,10 +26,10 @@ $(document).ready(function () {
             if (responseJson.data.length > 0) {
 
                 responseJson.data.forEach((item) => {
-                    $("#cboCategory").append(
-                       // $("<option>").val(item.idCategory).text(item.description)
+                    $("#cboBank").append(
+                       // $("<option>").val(item.idBank).text(item.description)
                         //$("<option>").val("Bank not defined").text("Select Bank")
-                        $("<option>").val(item.description).text(item.description)
+                        $("<option>").val(item.idCategory).text(item.description)
                     )
                 });
 
@@ -67,20 +67,17 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
-            {
-                "data": "idProduct",
-            },
-
             { "data": "registrationDate" },
-            { "data": "barCode" },
-            { "data": "brand" },
-            { "data": "description" },
-            { "data": "idCategory" },
+            {  "data": "idProduct"  },
+            { "data": "cusCode" },
+            { "data": "invoiceName" },
+            { "data": "shortName" },
+            { "data": "nameCategory" },
             //{ "data": "nameCategory" },
-            { "data": "quantity" },
-            { "data": "invoiceRate" },
+            { "data": "phoneNo" },
+            { "data": "debit" },
 
-            { "data": "wsPrice" },
+            { "data": "openingBalance" },
             {
                 "data": "photoBase64", render: function (data) {
                     if (data == null)
@@ -106,10 +103,10 @@ $(document).ready(function () {
                         return '<span class="badge badge-danger">Inactive</span>';
                 }
             },
-            { "data": "price" },
+            { "data": "mobile" },
             
             
-            { "data": "crtnSize" }
+            { "data": "address" }
         ],
         order: [[0, "desc"]],
         dom: "Bfrtip",
@@ -129,15 +126,15 @@ $(document).ready(function () {
 
 const openModal = (model = BASIC_MODEL) => {
     $("#txtId").val(model.idProduct);
-    $("#txtBarCode").val(model.barCode);
-    $("#txtBrand").val(model.brand);
-    $("#txtDescription").val(model.description);
-    $("#cboCategory").val(model.idCategory == 0 ? $("#cboCategory option:first").val() : model.idCategory);
-    $("#txtQuantity").val(model.quantity);
-    $("#txtPrice").val(model.price);
-    $("#txtWSPrice").val(model.wsPrice);
-    $("#txtinvoiceRate").val(model.invoiceRate);
-    $("#txtCrtnSize").val(model.crtnSize);
+    $("#txtCusCode").val(model.cusCode);
+    $("#txtInvoice").val(model.invoiceName);
+    $("#txtShortName").val(model.shortName);
+    $("#cboBank").val(model.idBank == 0 ? $("#cboBank option:first").val() : model.idBank);
+    $("#txtPhoneNo").val(model.phoneNo);
+    $("#txtMobile").val(model.mobile);
+    $("#txtOpenBalance").val(model.openingBalance);
+    $("#txtDebit").val(model.debit);
+    $("#txtAddress").val(model.address);
     $("#cboState").val(model.isActive);
     $("#txtPhoto").val("");
     $("#imgProduct").attr("src", `data:image/png;base64,${model.photoBase64}`);
@@ -163,15 +160,15 @@ $("#btnSave").on("click", function () {
 
     const model = structuredClone(BASIC_MODEL);
     model["idProduct"] = parseInt($("#txtId").val());
-    model["barCode"] = $("#txtBarCode").val();
-    model["brand"] = $("#txtBrand").val();
-    model["description"] = $("#txtDescription").val();
-    model["idCategory"] = $("#cboCategory").val();
-    model["quantity"] = $("#txtQuantity").val();
-    model["price"] = $("#txtPrice").val();
-    model["wsprice"] = $("#txtWSPrice").val();
-    model["invoiceRate"] = $("#txtinvoiceRate").val();
-    model["crtnsize"] = $("#txtCrtnSize").val();
+    model["cusCode"] = $("#txtCusCode").val();
+    model["invoiceName"] = $("#txtInvoice").val();
+    model["shortName"] = $("#txtShortName").val();
+    model["idBank"] = $("#cboBank").val();
+    model["phoneNo"] = $("#txtPhoneNo").val();
+    model["mobile"] = $("#txtMobile").val();
+    model["openingBalance"] = $("#txtOpenBalance").val();
+    model["debit"] = $("#txtDebit").val();
+    model["address"] = $("#txtAddress").val();
     model["isActive"] = $("#cboState").val();
     const inputPhoto = document.getElementById('txtPhoto');
 
@@ -256,7 +253,7 @@ $("#tbData tbody").on("click", ".btn-delete", function () {
         console.log(trlist[i].getElementsByTagName("td")[2].innerText);
 
     }
-    console.log('123');
+   // console.log('123');
 
 
     let row;

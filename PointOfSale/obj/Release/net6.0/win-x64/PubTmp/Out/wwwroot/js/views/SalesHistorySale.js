@@ -22,10 +22,36 @@
 }
 
 $(document).ready(function () {
+
     SEARCH_VIEW["searchDate"]();
 
     $("#txtStartDate").datepicker({ dateFormat: 'dd/mm/yy' });
     $("#txtEndDate").datepicker({ dateFormat: 'dd/mm/yy' });
+    /*-------------Start Ameesh Work---------------*/
+    //////////////// Default Date Setting ////////////////
+    const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    if (`${month}`.length == 1) {
+        month = '0' + `${month}`
+
+    }
+    if (`${day}`.length == 1) {
+        day = '0' + `${day}`
+
+    }
+    let currentDate = `${day}/${month}/${year}`;
+
+    document.getElementById("txtStartDate").value = currentDate;
+    document.getElementById("txtEndDate").value = currentDate;
+
+    document.getElementById("btnSearch").click();
+
+    //////////////// Default Date Setting ////////////////
+
+        /*-----------End Ameesh Work-----------*/
 })
 
 $("#cboSearchBy").change(function () {
@@ -61,6 +87,7 @@ $("#btnSearch").click(function () {
     fetch(`/Sales/History?saleNumber=${saleNumber}&startDate=${startDate}&endDate=${endDate}`)
         .then(response => {
             $(".card-body").find("div.row").LoadingOverlay("hide")
+
             return response.ok ? response.json() : Promise.reject(response);
         }).then(responseJson => {
             $("#tbsale tbody").html("");

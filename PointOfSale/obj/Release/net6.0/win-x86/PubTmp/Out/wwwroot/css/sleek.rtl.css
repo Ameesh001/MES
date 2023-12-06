@@ -13953,7 +13953,7 @@ code {
 
 .form-group .form-control, .input-group .form-control {
   font-size: 0.98rem;
-  padding: .5rem 1.06rem;
+  padding: .4rem 1.06rem;
   border-color: #e5e9f2;
 }
 
@@ -15744,10 +15744,11 @@ div.copied {
 .app-brand {
   position: relative;
   display: block;
-  background-color: #4c84ff;
+  /*background-color: #4c84ff;*/
 }
 
-.app-brand a {
+
+{
   display: flex;
   flex-direction: row;
   align-items: center;

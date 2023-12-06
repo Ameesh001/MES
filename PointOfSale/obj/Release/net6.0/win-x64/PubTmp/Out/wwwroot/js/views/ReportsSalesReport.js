@@ -5,6 +5,8 @@ $(document).ready(function () {
     $("#txtStartDate").datepicker({ dateFormat: 'dd/mm/yy' });
     $("#txtEndDate").datepicker({ dateFormat: 'dd/mm/yy' });
 
+   
+
     tableData = $('#tbdata').DataTable({
         "processing": true,
         "ajax": {
@@ -38,6 +40,35 @@ $(document).ready(function () {
             }, 'pageLength'
         ]
     });
+
+    /*-------------Start Ameesh Work---------------*/
+    //////////////// Default Date Setting ////////////////
+    const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    if (`${month}`.length == 1) {
+        month = '0' + `${month}`
+
+    }
+    if (`${day}`.length == 1) {
+        day = '0' + `${day}`
+
+    }
+    let currentDate = `${day}/${month}/${year}`;
+
+    document.getElementById("txtStartDate").value = currentDate;
+    document.getElementById("txtEndDate").value = currentDate;
+
+
+    var new_url = `/Reports/ReportSale?startDate=${$("#txtStartDate").val().trim()}&endDate=${$("#txtEndDate").val().trim()}`
+
+    tableData.ajax.url(new_url).load();
+
+    //////////////// Default Date Setting ////////////////
+
+    /*-----------End Ameesh Work-----------*/
 
 })
 

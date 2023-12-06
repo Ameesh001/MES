@@ -12,6 +12,7 @@
           "AutoMapper": "11.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "DinkToPdf": "1.0.8",
+          "KendoUICore": "2023.2.829",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.8",
           "PointOfSale.Business": "1.0.0",
           "PointOfSale.Model": "1.0.0",
@@ -70,6 +71,12 @@
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.0"
           }
+        }
+      },
+      "jQuery/1.9.1": {},
+      "KendoUICore/2023.2.829": {
+        "dependencies": {
+          "jQuery": "1.9.1"
         }
       },
       "MessagePack/2.1.152": {
@@ -2429,6 +2436,20 @@
       "sha512": "sha512-rsYXB7+iUPP8AHgQ8JP2UZI2xK2KhjcdGr9E6zX3CsZaTLCaw8M35vaAJRo1rfxeaZEVMuXeaquLVCkZ7JcZ5Q==",
       "path": "humanizer.core/2.2.0",
       "hashPath": "humanizer.core.2.2.0.nupkg.sha512"
+    },
+    "jQuery/1.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HiX9icLyiJGgiL5EOIn0d1MBPHVV2M9mzWT4mANdniDNR51RvAFTyKEXEd2+5yQJ4PJ5xePOR61Vjj/omQzYcw==",
+      "path": "jquery/1.9.1",
+      "hashPath": "jquery.1.9.1.nupkg.sha512"
+    },
+    "KendoUICore/2023.2.829": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cknNCCVYyoqiBfGa4RbJhN7J52syXCp5bBolDoma9F0lE/tYX+mfnGI/tiBEGcYGRMAh6rQNtidMceSS8axTkw==",
+      "path": "kendouicore/2023.2.829",
+      "hashPath": "kendouicore.2023.2.829.nupkg.sha512"
     },
     "MessagePack/2.1.152": {
       "type": "package",

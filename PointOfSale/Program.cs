@@ -48,7 +48,8 @@ builder.Services.AddScoped<IDashBoardService, DashBoardService>();
 builder.Services.AddScoped<IMenuService, MenuService>();
 
 var context = new CustomAssemblyLoadContext();
-context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "Utilities/LibraryPDF/libwkhtmltox.dll"));
+//context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "Utilities/LibraryPDF/libwkhtmltox.dll"));
+//context.LoadUnmanagedLibrary("./Utilities/LibraryPDF/libwkhtmltox.dll");
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 

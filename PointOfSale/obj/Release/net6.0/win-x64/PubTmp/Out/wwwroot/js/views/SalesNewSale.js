@@ -51,6 +51,7 @@ $(document).ready(function () {
                 };
             },
             processResults: function (data) {
+
                 return {
                     results: data.map((item) => (
                         {

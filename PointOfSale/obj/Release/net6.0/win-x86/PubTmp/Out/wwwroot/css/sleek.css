@@ -13953,7 +13953,7 @@ code {
 
 .form-group .form-control, .input-group .form-control {
   font-size: 0.98rem;
-  padding: .5rem 1.06rem;
+  padding: .4rem 1.06rem;
   border-color: #e5e9f2;
 }
 
@@ -15748,7 +15748,7 @@ code {
     .app-brand {
         position: relative;
         display: block;
-        background-color: #4c84ff;
+       /* background-color: #4c84ff;*/
     }
 
         .app-brand a {
@@ -15759,7 +15759,7 @@ code {
             line-height: 75px;
             width: 230px;
             transition: width 0.3s ease-in-out;
-            padding-left: 1.56rem;
+            padding-left: 0.2rem;
         }
 
     @media (prefers-reduced-motion: reduce) {
@@ -15783,7 +15783,7 @@ code {
         color: #ffffff;
         font-size: 1.12rem;
         margin-left: 0.94rem;
-        max-width: 170px;
+        max-width: 200px;
     }
 
     /*  Nav menus Icon Styles */
@@ -19951,5 +19951,9 @@ code {
     html[dir="rtl"] #toast-container > .toast-success {
         background-position: left 15px center;
     }
+
+/*.bodylogin {
+    background-image: url('img/world.jpg');
+}*/
 
     /*# sourceMappingURL=sleek.css.map */

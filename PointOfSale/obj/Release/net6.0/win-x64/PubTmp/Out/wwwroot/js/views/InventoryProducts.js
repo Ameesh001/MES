@@ -9,6 +9,9 @@ const BASIC_MODEL = {
     idCategory: 0,
     quantity: 0,
     price: 0,
+    wsPrice: 0,
+    invoiceRate: 0,
+    crtnSize: 0,
     isActive: 1,
     photo: ""
 }
@@ -30,7 +33,29 @@ $(document).ready(function () {
 
             }
         })
+        ///////////////////////////////////////////////////////////////////////////////////
 
+    //$.ajax({
+    //    url: '/Inventory/GetProducts',
+    //    type: 'GET',
+    //    dataType: 'json',
+    //    success: function (data) {
+    //        $('#datatable-table').dataTable({
+    //            "sAjaxDataProp": "",
+    //            "bProcessing": true,
+    //            "aaData": data,
+    //            "aoColumnDefs": [
+    //                { "mData": "id" },
+    //                { "mData": "bandname" },
+    //                { "mData": "members" },
+    //                { "mData": "bio" },
+    //                { "mData": "songlist" }
+    //            ]
+    //        });
+    //    },
+    //    error: function () { console.log('error retrieving customers'); }
+    //});
+        ///////////////////////////////////////////////////////////////////////////////////
 
     tableData = $("#tbData").DataTable({
         responsive: true,
@@ -55,7 +80,10 @@ $(document).ready(function () {
             { "data": "description" },
             { "data": "nameCategory" },
             { "data": "quantity" },
+            { "data": "invoiceRate" },
             { "data": "price" },
+            { "data": "wsPrice" },            
+            { "data": "crtnSize" },
             {
                 "data": "isActive", render: function (data) {
                     if (data == 1)
@@ -69,7 +97,7 @@ $(document).ready(function () {
                     '<button class="btn btn-danger btn-delete btn-sm"><i class="mdi mdi-trash-can"></i></button>',
                 "orderable": false,
                 "searchable": false,
-                "width": "80px"
+                "width": "90px"
             }
         ],
         order: [[0, "desc"]],
@@ -81,7 +109,7 @@ $(document).ready(function () {
                 title: '',
                 filename: 'Report Products',
                 exportOptions: {
-                    columns: [2, 3, 4, 5, 6]
+                    columns: [2, 3, 4, 5, 6,7,8,9,10,11]
                 }
             }, 'pageLength'
         ]
@@ -96,6 +124,9 @@ const openModal = (model = BASIC_MODEL) => {
     $("#cboCategory").val(model.idCategory == 0 ? $("#cboCategory option:first").val() : model.idCategory);
     $("#txtQuantity").val(model.quantity);
     $("#txtPrice").val(model.price);
+    $("#txtWSPrice").val(model.wsPrice);
+    $("#txtinvoiceRate").val(model.invoiceRate);
+    $("#txtCrtnSize").val(model.crtnSize);
     $("#cboState").val(model.isActive);
     $("#txtPhoto").val("");
     $("#imgProduct").attr("src", `data:image/png;base64,${model.photoBase64}`);
@@ -127,6 +158,9 @@ $("#btnSave").on("click", function () {
     model["idCategory"] = $("#cboCategory").val();
     model["quantity"] = $("#txtQuantity").val();
     model["price"] = $("#txtPrice").val();
+    model["wsprice"] = $("#txtWSPrice").val();
+    model["invoiceRate"] = $("#txtinvoiceRate").val();
+    model["crtnsize"] = $("#txtCrtnSize").val();
     model["isActive"] = $("#cboState").val();
     const inputPhoto = document.getElementById('txtPhoto');
 
@@ -200,6 +234,19 @@ $("#tbData tbody").on("click", ".btn-edit", function () {
 
 
 $("#tbData tbody").on("click", ".btn-delete", function () {
+
+
+    var ProtectedIsfound = false // default value. 
+    //JavaScript method:
+        //loop through the tr and td, then based on the IsProtected value to change the ProtectedIsFound value.
+        var trlist = document.getElementById("tbData").getElementsByTagName("tr");
+        for (var i = 1; i < trlist.length; i++) {           
+                
+                console.log(trlist[i].getElementsByTagName("td")[2].innerText);             
+            
+        }
+        console.log('123');
+ 
 
     let row;
 
