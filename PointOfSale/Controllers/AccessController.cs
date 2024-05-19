@@ -11,7 +11,7 @@ namespace PointOfSale.Controllers
 {
     public class AccessController : Controller
     {
-        //Code
+        //Codes
         private readonly IUserService _userService;
         Loggers log = new Loggers();
 
