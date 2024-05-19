@@ -2,7 +2,8 @@
 {
     public class VMArtical
     {
-        public int IdCategory { get; set; }
+        //Testing 
+        public int IdCategory  { get; set; }
         public string? Description { get; set; }
         public int? IsActive { get; set; }
     }
