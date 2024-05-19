@@ -14,6 +14,7 @@ namespace PointOfSale.Controllers
     [Authorize]
     public class InventoryController : Controller
     {
+        //kjlkjl
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
         private readonly IMapper _mapper;
