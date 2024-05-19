@@ -22,6 +22,13 @@ namespace PointOfSale.Business.Services
         public async Task<List<Bank>> List()
         {
             IQueryable<Bank> query = await _repository.Query();
+            //IQueryable<Bank> query = await _repository.Query(u => u.IsActive == true);
+            return query.ToList();
+        }
+
+        public async Task<List<Bank>> ListActive()
+        {
+            IQueryable<Bank> query = await _repository.Query(u => u.IsActive == true);
             return query.ToList();
         }
 

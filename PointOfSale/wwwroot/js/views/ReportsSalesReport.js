@@ -36,7 +36,7 @@ $(document).ready(function () {
                 text: 'Export Excel',
                 extend: 'excelHtml5',
                 title: '',
-                filename: 'Sales Report',
+                filename: 'GatePass Report',
             }, 'pageLength'
         ]
     });

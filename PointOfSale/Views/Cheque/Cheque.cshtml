@@ -1,0 +1,314 @@
+﻿@{
+    ViewData["Title"] = "ChequePass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section StylesPOS{
+
+    <link href="~/plugins/data-tables/datatables.bootstrap4.min.css" rel="stylesheet">
+    <link href="~/plugins/data-tables/buttons.bootstrap4.min.css" rel="stylesheet">
+    <link href="~/plugins/data-tables/responsive.datatables.min.css" rel="stylesheet">
+
+
+}
+
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="card card-default">
+            <div class="card-header card-header-border-bottom">
+                <div class="row justify-content-between w-100">
+                    <div class="col-sm-4">
+                        <h4>Cheque</h4>
+                    </div>
+                    <div class="col-sm-4 text-right">
+
+                        @*                         <a href="#" class="btn btn-primary" target="_blank" id="linkPrint">Print</a>
+                        *@                        <button class="btn btn-success" id="btnNewProduct">New Cheque</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="tbData" class="table" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>RecordID</th>
+                                    <th>Created DateTime</th>
+                                    @* <th>RecordID</th> *@
+                                    <th>Payee Name</th>
+                                    <th>Amount</th>
+                                    <th>Cheque No.</th>
+                                    @* <th>NIC</th> *@
+                                    <th>Deposit Date</th>
+                                    @* <th>Vehicle Number</th> *@
+                                    <th>Bank</th>
+                                    <th>State</th>
+                                    @* <th>Remarks</th>
+                                    <th>Check Out Date</th>
+                                    <th>Check In Date</th> *@
+                                    <th>Action</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Grid Modal -->
+<div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-labelledby="exampleModalGrid" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalGridTitle">Cheque Detail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" value="0" id="txtId">
+
+                    <div class="col-sm-12">
+                        <div class="form-row">
+
+                            <div class="form-group col-sm-4" id="divdate4" onchange="OnBankChange()">
+                                <label for="cboreceive">Bank</label>
+                                <select class="form-control form-control-sm" id="cbobank">
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="txtPName">Payee Name</label>
+                                <input type="text" onkeyup="setlblvalue()" class="form-control form-control-sm input-validate" id="txtPName" name="PName">
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label for="txtChequeNo">Cheque No.</label>
+                                <input type="text" class="form-control form-control-sm input-validate" id="txtChequeNo" name="ChequeNo">
+                            </div>
+
+                            @* <div class="form-group col-sm-4">
+                            <label for="txtAmount">Amount</label>
+                            <input type="number" onkeyup="AmountinWords()" class="form-control form-control-sm input-validate" id="txtAmount" name="Amount">
+                            </div> *@
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                @*                                 <label for="txtAmount">Amount</label>
+                                *@                                <input type="number" placeholder="Amount" onkeyup="AmountinWords()" class="form-control form-control-sm input-validate" id="txtAmount" name="Amount">
+                            </div>
+                            <div class="form-group col-sm-8">
+                                @* <label for="txtInWords">Amount in Words</label>  *@
+                                <input type="text" onkeyup="setlblvalue()" class="form-control form-control-sm input-validate" id="txtInWords" name="InWords" placeholder="Amount in Words">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            @* <div class="form-group col-sm-4">
+                            <label for="txtVType">Issued Date</label>
+                            <input type="date" class="form-control form-control-sm" id="txtStartDt" name="StartDate">
+
+                            </div> *@
+
+                            <div class="form-group col-sm-4" id="divdate2" onchange="setlblvalue()">
+                                <label for="txtDepositDt">Deposit Date</label>
+                                <input type="date" class="form-control form-control-sm" id="txtDepositDt" name="DepositDt">
+
+                            </div>
+
+                            <div class="form-group col-sm-4" id="divdate3">
+                                <label for="cboState">State</label>
+                                <select class="form-control form-control-sm" id="cboState">
+                                    <option value="0">Issued</option>
+                                    <option value="1">Pending</option>
+                                    <option value="2">Cancelled</option>
+                                    <option value="3">Edited</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-4" id="divdate3">
+                                <label for="cboState">Type</label>
+                                <select class="form-control form-control-sm" id="chequeType">
+                                    <option value="0">No Crossing</option>
+                                    <option value="1">Cross Only</option>
+                                    <option value="2">Cross A/C Payee</option>
+                                    @* <option value="3">Cross A/C Payee + Or Bearer</option> *@
+                                    @* <option value="4">Cross A/C Payee + Not Nagotiable+ Or Bearer</option> *@
+                                    <option value="4">Cross A/C Payee + Not Nagotiable</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                        </div>
+
+                        <div class="form-row">
+                            @* <div class="col-sm-12">
+                            <label id="lblPay" style="position: absolute; cursor: move;">Umais Khan </label>
+                            <label id="lblAmount" style="position: absolute; cursor: move;">12345678</label>
+                            <label id="lbldate" style="position: absolute; cursor: move;">02262024</label>
+                            <label id="lblInWords" style="position: absolute; cursor: move;">One lack two thousand Only</label>
+                            <img id="imgCheque" style="width:680px;border:1px solid black" src="~/img/BIP.jpg" alt="Photo Cheque">
+                            </div> *@
+                            <div class="col-sm-12" id="alllbl">
+                                <label id="lblPay" style="font-weight: 500;font-size:18px;position: absolute; cursor: move;"></label>
+                                <label id="lblAmount" style="font-weight: 500;font-size:18px;position: absolute; cursor: move;"></label>
+                                <label id="lbldate" style="font-weight: 500;font-size:18px;position: absolute; cursor: move;"></label>
+                                <label id="lblInWords" style="width:400px;font-weight: 500;font-size:18px;position: absolute; cursor: move;"></label>
+
+                                @* <hr />
+                                <label id="lblCrossTop2" style="border-bottom:1px solid black;width:70px;font-size:18px;position: absolute;">A/C PAYEE ONLY</label>
+
+                                <hr /> *@
+                                @* <img id="imgCheque" style="width:680px;margin-top:14px;border:1px solid black;" src="" alt="Photo Cheque"> *@
+
+                                @* <label id="lblCrossTop" style="border:1px solid black;width:50px;font-weight: 500;font-size:18px;position: absolute;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> *@
+                                @* <label id="lblCrossTop2" style="border-bottom:1px solid black;width:70px;font-size:18px;position: absolute;">A/C PAYEE ONLY</label> *@
+
+                                @* <label id="lblCrossBottom" style="border:1px solid black;width:70px;font-weight: 500;font-size:18px;position: absolute;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> *@
+                            </div>
+
+
+                            @* <div class="form-row">
+
+                            <div class="form-group col-sm-6">
+                            <label for="txtOpenBalance">Opening Balance</label>
+                            <input type="text" class="form-control form-control-sm input-validate" id="txtOpenBalance" name="OpeningBalance">
+                            </div>
+                            <div class="form-group col-sm-6">
+                            <label for="txtDebitd">Debit</label>
+                            <input type="text" class="form-control form-control-sm input-validate" id="txtDebit" name="Debit">
+                            </div>
+
+                            </div> *@
+                            @*  <div class="form-row">
+
+                            <div class="form-group col-sm-4">
+                            <label for="cboStatus">Status</label>
+                            <select class="form-control form-control-sm input-validate" id="cboStatus" onchange="checkvalue()" name="Status">
+                            <option value="Non-Returnable">Non-Returnable</option>
+                            <option value="Returnable">Returnable</option>
+                            <option value="Personal Belonging">Personal Belonging</option>
+                            <option value="Domestic Waste">Domestic Waste</option>
+                            <option value="Construction Waste">Construction Waste</option>
+                            <option value="Modification">Modification</option>
+                            </select>
+                            </div>
+
+                            </div> *@
+
+                            @* <div class="form-row">
+
+                            <div class="form-group col-sm-4" id="divdate3" style="display:none;">
+                            <label for="cboreceive">is Received?</label>
+                            <select class="form-control form-control-sm" id="cboreceive">
+                            <option value="2"></option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                            </select>
+                            </div>
+                            </div> *@
+
+                            @* <div class="form-row">
+                            <div class="form-group col-sm-12">
+                            <label for="txtRemarks">Remarks</label>
+                            <input type="text" class="form-control form-control-sm input-validate" id="txtRemarks" name="Address">
+                            </div>
+                            </div>
+
+                            <table class="table table-bordered" id="childTable">
+                            <thead class="table-primary">
+                            <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Remarks</th>
+                            <th scope=""></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                            <th scope="row">1</th>
+                            <td class="col-sm-4">
+                            <input type="text" name="name" class="form-control" />
+                            </td>
+                            <td>
+                            <input type="text" id="school" name="school" class="form-control" />
+                            </td>
+                            <td class="col-sm-2">
+                            <input type="text" name="year" class="form-control" />
+                            </td>
+                            <td class="col-sm-2">
+                            <input type="text" name="age" class="form-control" />
+                            </td>
+                            <td>
+                            <input type="button" class="btn btn-block btn-default" id="addrow" value="+" />
+                            </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            @* <div class="form-row">
+                            <div class="form-group col-sm-6">
+                            <label for="cboStatus">State</label>
+                            <select class="form-control form-control-sm" id="cboStatus">
+                            <option value="1">Returnable</option>
+                            <option value="0">Non-Returnable</option>
+                            </select>
+                            </div>
+                            </div> *@
+                            @* 	<div class="form-row">
+                            <div class="form-group col-sm-6">
+                            <label for="txtPhoto">Photo</label>
+                            <input class="form-control-file" type="file" id="txtPhoto" />
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-sm-4">
+                            <img id="imgProduct" style="max-width:200px;" src="" class="rounded mx-auto d-block" alt="Photo Customer">
+                            </div> *@
+                        </div>
+
+                </form>
+
+            </div>
+            <img id="imgCheque" style="width:774px;height:315px;margin-top:14px;border:1px solid black;" src="" alt="Photo Cheque">
+            @* 774px *@
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSave">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/plugins/data-tables/jquery.datatables.min.js"></script>
+    <script src="~/plugins/data-tables/datatables.bootstrap4.min.js"></script>
+    <script src="~/plugins/data-tables/datatables.responsive.min.js"></script>
+
+
+    <script src="~/plugins/data-tables/dataTables.buttons.min.js"></script>
+    <script src="~/plugins/data-tables/buttons.bootstrap4.min.js"></script>
+    <script src="~/plugins/data-tables/jszip.min.js"></script>
+    <script src="~/plugins/data-tables/buttons.html5.min.js"></script>
+    <script src="~/plugins/data-tables/buttons.print.min.js"></script>
+
+    <script src="~/plugins/jquery-ui/jquery-ui.js"></script>
+
+    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script> *@
+
+    <script src="~/umais/moment.min.js"></script>
+    <script src="~/js/views/Cheque.js"></script>
+
+}

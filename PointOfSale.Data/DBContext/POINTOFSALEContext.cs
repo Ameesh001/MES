@@ -21,7 +21,10 @@ namespace PointOfSale.Data.DBContext
 		public virtual DbSet<Size> Sizes { get; set; } = null!;
 		public virtual DbSet<Style> Styles { get; set; } = null!;
 
-		public virtual DbSet<Customer> Customers { get; set; } = null!;
+        public virtual DbSet<Cheque> Cheques { get; set; } = null!;
+        public virtual DbSet<Customer> Customers { get; set; } = null!;
+
+		public virtual DbSet<GatePass> GatePasses { get; set; } = null!;
 
 		public virtual DbSet<Bank> Banks { get; set; } = null!;
         public virtual DbSet<Design> Designs { get; set; } = null!;        
@@ -44,6 +47,26 @@ namespace PointOfSale.Data.DBContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Cheque>(entity =>
+            {
+                entity.HasKey(e => e.idcheque)
+                    .HasName("PK__Category__79D361B6930E16FF");
+
+                entity.ToTable("Cheque");
+
+                entity.Property(e => e.idcheque).HasColumnName("idcheque");
+
+                entity.Property(e => e.sysdate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("sysdate")
+                    .HasDefaultValueSql("(getdate())");
+
+
+                entity.Property(e => e.editDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("editDate")
+                    .HasDefaultValueSql("(getdate())");
+            });
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.HasKey(e => e.IdCategory)
@@ -418,18 +441,18 @@ namespace PointOfSale.Data.DBContext
 			});
 
 			modelBuilder.Entity<Customer>(entity =>
-            {
-                entity.HasKey(e => e.IdProduct)
-                    .HasName("PK__Product__5EEC79D18F8E118B");
+			{
+				entity.HasKey(e => e.IdProduct)
+					.HasName("PK__Product__5EEC79D18F8E118B");
 
-                entity.ToTable("Customer");
+				entity.ToTable("Customer");
 
-                entity.Property(e => e.IdProduct).HasColumnName("idProduct");
+				entity.Property(e => e.IdProduct).HasColumnName("idProduct");
 
-                entity.Property(e => e.CusCode)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("CusCode");
+				entity.Property(e => e.CusCode)
+					.HasMaxLength(50)
+					.IsUnicode(false)
+					.HasColumnName("CusCode");
 
 				entity.Property(e => e.Address)
 					.HasMaxLength(50)
@@ -437,33 +460,45 @@ namespace PointOfSale.Data.DBContext
 					.HasColumnName("crtnsize");
 
 				entity.Property(e => e.invoiceName)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("invoiceName");
+					.HasMaxLength(50)
+					.IsUnicode(false)
+					.HasColumnName("invoiceName");
 
-                entity.Property(e => e.ShortName)
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("shortName");
+				entity.Property(e => e.ShortName)
+					.HasMaxLength(100)
+					.IsUnicode(false)
+					.HasColumnName("shortName");
 
-                entity.Property(e => e.IdBank).HasColumnName("IdBank");
+				entity.Property(e => e.IdBank).HasColumnName("IdBank");
 
-                entity.Property(e => e.IsActive).HasColumnName("isActive");
+				entity.Property(e => e.IsActive).HasColumnName("isActive");
 
-                entity.Property(e => e.Photo).HasColumnName("photo");              
+				entity.Property(e => e.Photo).HasColumnName("photo");
 
 				entity.Property(e => e.Mobile).HasColumnName("mobile");
 				entity.Property(e => e.PhoneNo).HasColumnName("phoneNo");
 
-                entity.Property(e => e.RegistrationDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("registrationDate")
-                    .HasDefaultValueSql("(getdate())");
+				entity.Property(e => e.RegistrationDate)
+					.HasColumnType("datetime")
+					.HasColumnName("registrationDate")
+					.HasDefaultValueSql("(getdate())");
 
-                entity.HasOne(d => d.IdCategoryNavigation)
-                    .WithMany(p => p.Customers)
-                    .HasForeignKey(d => d.IdBank)
-                    .HasConstraintName("FK__Product__idCateg__22AA2996");
+				entity.HasOne(d => d.IdCategoryNavigation)
+					.WithMany(p => p.Customers)
+					.HasForeignKey(d => d.IdBank)
+					.HasConstraintName("FK__Product__idCateg__22AA2996");
+			});
+
+			modelBuilder.Entity<GatePass>(entity =>
+            {
+                entity.ToTable("GatePass");
+                entity.HasKey(e => e.idGatePass);
+             
+                entity.Property(e => e.dateGP)
+                    .HasColumnType("datetime")
+                    .HasColumnName("dateGP")
+                    .HasDefaultValueSql("(getdate())");
+            
             });
 
             modelBuilder.Entity<Rol>(entity =>

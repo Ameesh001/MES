@@ -1,0 +1,28 @@
+
+    /*  .contenedor {
+                                width: 900px !important;
+                                height: 842px !important;
+                                margin: auto;
+                            } */
+
+/* -webkit-transform: rotate(-90deg) translateX(-330px) translateY(-485px); */
+
+    body {
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    #cross {
+        width: 210px;
+        font-size: 14PX;
+        text-align: center;
+        -webkit-transform: rotate(-35deg) translateX(-45px);
+    }
+
+#cheqbody {
+    /* Adjust cheque center value  */   
+    -webkit-transform: rotate(-90deg) translateX(-330px) translateY(-110px);
+}
+
+    hr {
+        background-color: black; /* Modern Browsers */
+    }

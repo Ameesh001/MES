@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PointOfSale.Data.DBContext;
+using PointOfSale.Data.LogMaker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace PointOfSale.Data.Repository
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         private readonly POINTOFSALEContext _dbcontext;
+        Loggers _log = new Loggers();
         public GenericRepository(POINTOFSALEContext context)
         {
             _dbcontext = context;
@@ -23,8 +25,9 @@ namespace PointOfSale.Data.Repository
                 TEntity entity = await _dbcontext.Set<TEntity>().FirstOrDefaultAsync(filter);
                 return entity;
             }
-            catch
+            catch(Exception ex)
             {
+                _log.LogWriter("GenericRepo Get ex: " + ex);
                 throw;
             }
         }
@@ -38,8 +41,9 @@ namespace PointOfSale.Data.Repository
                 await _dbcontext.SaveChangesAsync();
                 return entity;
             }
-            catch
+            catch (Exception ex)
             {
+                _log.LogWriter("GenericRepo Add ex: " + ex);
                 throw;
             }
         }
@@ -52,8 +56,9 @@ namespace PointOfSale.Data.Repository
                 await _dbcontext.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                _log.LogWriter("GenericRepo Edit ex: " + ex);
                 throw;
             }
         }
@@ -66,16 +71,26 @@ namespace PointOfSale.Data.Repository
                 await _dbcontext.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                _log.LogWriter("GenericRepo Delete ex: " + ex);
                 throw;
             }
         }
 
-        public async Task<IQueryable<TEntity>> Query(Expression<Func<TEntity, bool>> filter)
+        public Task<IQueryable<TEntity>> Query(Expression<Func<TEntity, bool>> filter)
         {
-            IQueryable<TEntity> queryentity = filter == null ? _dbcontext.Set<TEntity>() : _dbcontext.Set<TEntity>().Where(filter);
-            return queryentity;
+
+            try
+            {
+                IQueryable<TEntity> queryentity = filter == null ? _dbcontext.Set<TEntity>() : _dbcontext.Set<TEntity>().Where(filter);
+                return Task.FromResult(queryentity);
+            }
+            catch (Exception ex)
+            {
+                _log.LogWriter("GenericRepo Query ex: " + ex);
+                throw;
+            }
         }
     }
 }

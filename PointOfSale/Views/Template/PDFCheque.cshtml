@@ -1,0 +1,117 @@
+﻿@model PointOfSale.Models.VMCheque
+
+
+@using PointOfSale.Helpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Print Cheque</title>
+    <link id="sleek-css" rel="stylesheet" href="~/css/chequePrint.css" />
+ 
+</head>
+<body>
+    <div id="cheqbody">
+    <div id="cross" style="position: absolute;">
+        @{
+            if (Model.chequeType == "1")
+            {
+                <hr>
+                <br />
+                <hr>
+            }
+
+            else if (Model.chequeType == "2")
+            {
+                <hr>
+                <span>A/C PAYEE ONLY</span>
+                <hr>
+            }
+
+            else if (Model.chequeType == "4")
+            {
+                <hr>
+                <span>
+                    NOT NAGOTIABLE  <br />
+                    A/C PAYEE ONLY
+                </span>
+                <hr>
+            }
+        }
+    </div>
+
+    <div>
+        <div class="col-sm-12" id="alllbl">
+            <label id="lblPay" style="font-weight: 500;font-size:20px;position: absolute; margin-top:@Model.nameTop;margin-left:@Model.nameLeft">@Model.payeeName</label>
+            <label id="lblAmount" style="font-weight: 500;font-size:20px;position: absolute; margin-top:@Model.accTop;margin-left:@Model.accLeft">@Model.amount</label>
+            <label id="lbldate" style="font-weight: 500;font-size:19px;position: absolute; margin-top:@Model.DateTop;margin-left:@Model.DateLeft">@Model.CheqNoTop</label>
+            @* <label id="lbldate" style="font-weight: 500;font-size:18px;position: absolute; margin-top:@Model.DateTop;margin-left:@Model.DateLeft">@Model.depositDate</label> *@
+            <label id="lblInWords" style="width:400px;font-weight: 500;font-size:19px;position: absolute; margin-top:@Model.wordsTop;margin-left:@Model.wordsLeft">@Model.amountInWords</label>
+            @* <img id="imgCheque" style="width:680px;border:1px solid black;" src="~/img/habib bank limited.jpg" alt="Photo Cheque"> *@
+            @* <img id="imgCheque" style="width:680px;border:1px solid black;" src="~/img/Bank alfalah.jpg" alt="Photo Cheque"> *@
+
+        </div>
+
+        @* <input type="hidden" value="@Model.CheqNoLeft" id="bank"> *@
+        <label id="lblBank" style="position: absolute;display:none;">@Model.CheqNoLeft</label>
+
+    </div>
+    </div>
+    <!-- Javascript -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        //<--------------------Ameesh / Umais-------------------->
+        $(document).ready(function () {
+
+            try {
+                const parts = document.getElementById('lbldate').innerHTML; //2024-02-15
+                const bankVal = document.getElementById('lblBank').innerHTML.toUpperCase(); //2024-02-15
+
+                if (bankVal.indexOf('METRO') > -1) {
+                    document.getElementById('lbldate').innerHTML = parts[8] + '&nbsp;&nbsp;&nbsp;' + parts[9] + '&nbsp;&nbsp;&nbsp;&nbsp;' + parts[5] + '&nbsp;&nbsp;&nbsp;' + parts[6] + '&nbsp;&nbsp;&nbsp;&nbsp;' + parts[0] + '&nbsp;&nbsp;&nbsp;' + parts[1] + '&nbsp;&nbsp;&nbsp;' + parts[2] + '&nbsp;&nbsp;&nbsp;' + parts[3];
+                }
+                else {
+                    document.getElementById('lbldate').innerHTML = parts[8] + '&nbsp;&nbsp;&nbsp;' + parts[9] + '&nbsp;&nbsp;&nbsp;&nbsp;' + parts[5] + '&nbsp;&nbsp;&nbsp;' + parts[6] + '&nbsp;&nbsp;&nbsp;&nbsp;' + parts[0] + '&nbsp;&nbsp;&nbsp;&nbsp;' + parts[1] + '&nbsp;&nbsp;&nbsp;' + parts[2] + '&nbsp;&nbsp;&nbsp;' + parts[3];
+                }
+            }
+            catch (err) {
+                document.getElementById("lbldate").innerHTML = err.message;
+            }
+
+
+
+        });
+
+    </script>
+
+
+
+    @* <script src="~/plugins/data-tables/jquery.datatables.min.js"></script>
+    <script src="~/plugins/data-tables/datatables.bootstrap4.min.js"></script>
+    <script src="~/plugins/data-tables/datatables.responsive.min.js"></script>
+
+
+    <script src="~/plugins/data-tables/dataTables.buttons.min.js"></script>
+    <script src="~/plugins/data-tables/buttons.bootstrap4.min.js"></script>
+    <script src="~/plugins/data-tables/jszip.min.js"></script>
+    <script src="~/plugins/data-tables/buttons.html5.min.js"></script>
+    <script src="~/plugins/data-tables/buttons.print.min.js"></script>
+
+    <script src="~/plugins/jquery-ui/jquery-ui.js"></script>
+
+
+    <script src="~/umais/moment.min.js"></script>
+    <script src="~/js/views/ChequePrint.js"></script> *@
+
+
+</body>
+</html>
+
+
+
+

@@ -5,83 +5,98 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
 
-    <title>Sign In - Socks MRP System</title>
+    <title>Sign In - ChequeEase</title>
 
     <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
-    <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
+    @* <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" /> *@
+    @* <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" /> *@
+    <link rel="stylesheet" href="~/umais/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="~/umais/css.css" />
 
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="~/css/sleek.css" />
-     <style>
+    <style>
         #body {
-            background-image: url('img/world1.jpg');
+            background-image: url('img/cheque.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
         }
 
         /* #logo {
-            background-image: url('img/world1.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-        }  */
-     </style>
-  </head>
+                                    background-image: url('img/world1.jpg');
+                                    background-repeat: no-repeat;
+                                    background-attachment: fixed;
+                                    background-size: 100% 100%;
+                                }  */
+    </style>
+</head>
 
 <body class="" id="body">
     <img src="img/img.png" id="logo" style="position:absolute;border-radius: 0px 10px 10px 0px;">
     <div class="container d-flex align-items-center justify-content-center vh-100">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-10">
-          <div class="card">
-            <div class="card-header bg-primary">
-              <div class="app-brand ml-3">
-                <a href="#">
-                    <span class="brand-name">TEXTILFORT (PVT) LTD.</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="card-body p-5">
-              <h4 class="text-dark mb-5">Sign In</h4>
-              
-              <form  asp-controller="Access" asp-action="Login" method="post">
-                <div class="row">
-                  <div class="form-group col-md-12 mb-4">
-                    <input type="text" class="form-control input-lg" asp-for="Name" placeholder="UserName" id="txtuser">
-                  </div>
-
-                  <div class="form-group col-md-12 ">
-                                    <input type="password" class="form-control input-lg" asp-for="PassWord" placeholder="Password" id="txtpass" >
-                  </div>
-
-                  <div class="col-md-12">
-                    <div class="d-flex my-2 justify-content-between">
-                      <div class="d-inline-block mr-3">
-                        <label class="control control-checkbox">Keep me logged In.
-                          <input type="checkbox" asp-for="KeepLoggedIn" />
-                          <div class="control-indicator"></div>
-                        </label>
-                      </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <div class="app-brand ml-4">
+                            <a href="#" style="width:300px;">
+                                <span class="brand-name">CHEQUE EASE MANAGER</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <button type="submit" id="btnlogin" class="btn btn-lg btn-primary btn-block mb-4">Sign In</button>
+                    <div class="card-body p-5">
+                        @{
+                            if (ViewData["Message"] == null)
+                            {
+                                <h4 class="text-dark mb-5">Sign In</h4>
+                            }
+                            else
+                            {                               
+                                <h4 class="text-dark mb-3">Sign In</h4>
+                                <div class="text-dark mb-2 text-center">
+                                    <span class="text-danger font-weight-bold">@ViewData["Message"]</span>
+                                </div>
+                            }
 
-                  </div>
+                        }
+                        <form asp-controller="Access" asp-action="Login" method="post">
+                            <div class="row">
+                                <div class="form-group col-md-12 mb-4">
+                                    <input type="text" class="form-control input-lg" asp-for="Name" placeholder="UserName" id="txtuser">
+                                </div>
+
+                                <div class="form-group col-md-12 ">
+                                    <input type="password" class="form-control input-lg" asp-for="PassWord" placeholder="Password" id="txtpass">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="d-flex my-2 justify-content-between">
+                                        <div class="d-inline-block mr-3">
+                                            <label class="control control-checkbox">
+                                                Keep me logged In.
+                                                <input type="checkbox" asp-for="KeepLoggedIn" />
+                                                <div class="control-indicator"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" id="btnlogin" class="btn btn-lg btn-primary btn-block mb-4">Sign In</button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
 
@@ -92,20 +107,20 @@
 
     <script type="text/javascript">
         //<--------------------Ameesh / Umais-------------------->
-        $(document).ready(function () {
-         
-           $.getJSON("https://api.ipify.org?format=json", function (data) {
+        // $(document).ready(function () {
 
-                document.getElementById("txtuser").value = "Admin";
-                document.getElementById("txtpass").value = "abc123";
+        //    $.getJSON("https://api.ipify.org?format=json", function (data) {
 
-               // document.getElementById("btnlogin").click();
-               //  if (data.ip == '111.88.61.172'){
+                // document.getElementById("txtuser").value = "Admin";
+                // document.getElementById("txtpass").value = "123";
 
-               //      document.getElementById("btnlogin").click();
-               // }
-           })
-        });
+                // document.getElementById("btnlogin").click();
+                //  if (data.ip == '111.88.61.172'){
+
+                     // document.getElementById("btnlogin").click();
+                // }
+        //    })
+        // });
 
     </script>
 

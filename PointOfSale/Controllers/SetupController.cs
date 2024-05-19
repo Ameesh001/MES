@@ -1,137 +1,175 @@
 ﻿using AutoMapper;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PointOfSale.Business.Contracts;
-using PointOfSale.Business.Services;
 using PointOfSale.Model;
 using PointOfSale.Models;
+using PointOfSale.Utilities.Logger;
 using PointOfSale.Utilities.Response;
-using System.Data;
 
 namespace PointOfSale.Controllers
 {
     [Authorize]
     public class SetupController : Controller
     {
-		private readonly IBankService _bankService;
-        private readonly ICustomerService _customerService;
+        //private readonly IBankService _bankService;
+        private readonly IGatePassService _GatePassService;
         private readonly IMapper _mapper;
-		public SetupController(ICustomerService customerService, IBankService bankService,IMapper mapper)
-		{
-            _bankService = bankService;
-            _customerService = customerService;
-			_mapper = mapper;
-		}
+        private readonly IConverter _converter;
+        Loggers log = new Loggers();
+        public SetupController(IGatePassService GatePassService, IMapper mapper, IConverter converter)
+        {
+            // _bankService = bankService;
+            _GatePassService = GatePassService;
+            _mapper = mapper;
+            _converter = converter;
+        }
 
-		public IActionResult Customers()
-		{
-			return View();
-		}
+        public IActionResult GatePass()
+        {
+            log.LogWriter("GatePass");
+            return View();
+        }
 
-		[HttpGet]
-		public async Task<IActionResult> GetBanks()
-		{
-			List<VMBank> vmBankList = _mapper.Map<List<VMBank>>(await _bankService.List());
-			return StatusCode(StatusCodes.Status200OK, new { data = vmBankList });
-		}
+        //[HttpGet]
+        //public async Task<IActionResult> GetBanks()
+        //{
+        //	List<VMBank> vmBankList = _mapper.Map<List<VMBank>>(await _bankService.List());
+        //	return StatusCode(StatusCodes.Status200OK, new { data = vmBankList });
+        //}
 
-		
-		[HttpGet]
-		public async Task<IActionResult> GetCustomers()
-		{
-			List<VMCustomer> vmCustomerList = _mapper.Map<List<VMCustomer>>(await _customerService.List());
-			return StatusCode(StatusCodes.Status200OK, new { data = vmCustomerList });
-		}
 
-		[HttpPost]
-		public async Task<IActionResult> CreateCustomer([FromForm] IFormFile photo, [FromForm] string model)
-		{
-			GenericResponse<VMCustomer> gResponse = new GenericResponse<VMCustomer>();
-			try
-			{
-				VMCustomer vmCustomer = JsonConvert.DeserializeObject<VMCustomer>(model);
+        [HttpGet]
+        public async Task<IActionResult> GetGatePass()
+        {
+            log.LogWriter("GetGatePass");
+            try
+            {
+                List<VMGatePass> vmGatePassList = _mapper.Map<List<VMGatePass>>(await _GatePassService.List());
+                return StatusCode(StatusCodes.Status200OK, new { data = vmGatePassList });
+            }
+            catch (Exception ex)
+            {
 
-				if (photo != null)
-				{
-					using (var ms = new MemoryStream())
-					{
-						photo.CopyTo(ms);
-						var fileBytes = ms.ToArray();
-						vmCustomer.Photo = fileBytes;
-					}
-				}
-				else
-					vmCustomer.Photo = null;
+                log.LogWriter("GetGatePass ex:" + ex);
+                throw;
+            }
+        }
 
-				Customer Customer_created = await _customerService.Add(_mapper.Map<Customer>(vmCustomer));
+        [HttpPost]
+        public async Task<IActionResult> CreateGatePass([FromForm] IFormFile photo, [FromForm] string model)
+        {
 
-				vmCustomer = _mapper.Map<VMCustomer>(Customer_created);
+            log.LogWriter("CreateGatePass");
+            GenericResponse<VMGatePass> gResponse = new GenericResponse<VMGatePass>();
+            try
+            {
+                VMGatePass vmGatePass = JsonConvert.DeserializeObject<VMGatePass>(model);
 
-				gResponse.State = true;
-				gResponse.Object = vmCustomer;
-			}
-			catch (Exception ex)
-			{
-				gResponse.State = false;
-				gResponse.Message = ex.Message;
-			}
+                //vmGatePass.userID = HttpContext.Session.GetInt32("UserID");
+                GatePass GatePass_created = await _GatePassService.Add(_mapper.Map<GatePass>(vmGatePass));
 
-			return StatusCode(StatusCodes.Status200OK, gResponse);
-		}
+                vmGatePass = _mapper.Map<VMGatePass>(GatePass_created);
 
-		[HttpPut]
-		public async Task<IActionResult> EditCustomer([FromForm] IFormFile photo, [FromForm] string model)
-		{
-			GenericResponse<VMCustomer> gResponse = new GenericResponse<VMCustomer>();
-			try
-			{
-				VMCustomer vmCustomer = JsonConvert.DeserializeObject<VMCustomer>(model);
+                gResponse.State = true;
+                gResponse.Object = vmGatePass;
 
-				if (photo != null)
-				{
-					using (var ms = new MemoryStream())
-					{
-						photo.CopyTo(ms);
-						var fileBytes = ms.ToArray();
-						vmCustomer.Photo = fileBytes;
-					}
-				}
-				else
-					vmCustomer.Photo = null;
+                log.LogWriter("gResponse.State: " + gResponse.State);
+            }
+            catch (Exception ex)
+            {
+                gResponse.State = false;
+                gResponse.Message = ex.Message;
 
-				Customer Customer_edited = await _customerService.Edit(_mapper.Map<Customer>(vmCustomer));
+                log.LogWriter("CreateGatePass Exception: " + ex);
+            }
 
-				vmCustomer = _mapper.Map<VMCustomer>(Customer_edited);
+            return StatusCode(StatusCodes.Status200OK, gResponse);
 
-				gResponse.State = true;
-				gResponse.Object = vmCustomer;
-			}
-			catch (Exception ex)
-			{
-				gResponse.State = false;
-				gResponse.Message = ex.Message;
-			}
 
-			return StatusCode(StatusCodes.Status200OK, gResponse);
-		}
+        }
 
-		[HttpDelete]
-		public async Task<IActionResult> DeleteCustomer(int IdProduct)
-		{
-			GenericResponse<string> gResponse = new GenericResponse<string>();
-			try
-			{
-				gResponse.State = await _customerService.Delete(IdProduct);
-			}
-			catch (Exception ex)
-			{
-				gResponse.State = false;
-				gResponse.Message = ex.Message;
-			}
+        [HttpPut]
+        public async Task<IActionResult> EditGatePass([FromForm] IFormFile photo, [FromForm] string model)
+        {
+            log.LogWriter("EditGatePass");
+            GenericResponse<VMGatePass> gResponse = new GenericResponse<VMGatePass>();
+            try
+            {
+                VMGatePass vmGatePass = JsonConvert.DeserializeObject<VMGatePass>(model);
+                //vmGatePass.userID = HttpContext.Session.GetInt32("UserID"); 
 
-			return StatusCode(StatusCodes.Status200OK, gResponse);
-		}
+                GatePass GatePass_edited = await _GatePassService.Edit(_mapper.Map<GatePass>(vmGatePass));
 
-	}
+                vmGatePass = _mapper.Map<VMGatePass>(GatePass_edited);
+
+                gResponse.State = true;
+                gResponse.Object = vmGatePass;
+
+                log.LogWriter("gResponse.State: " + gResponse.State);
+            }
+            catch (Exception ex)
+            {
+                gResponse.State = false;
+                gResponse.Message = ex.Message;
+                log.LogWriter("EditGatePass Exception: " + ex);
+            }
+
+            return StatusCode(StatusCodes.Status200OK, gResponse);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteGatePass(int idGatePass)
+        {
+            log.LogWriter("DeleteGatePass");
+            GenericResponse<string> gResponse = new GenericResponse<string>();
+            try
+            {
+                gResponse.State = await _GatePassService.Delete(idGatePass);
+                log.LogWriter("gResponse.State: " + gResponse.State);
+            }
+            catch (Exception ex)
+            {
+                gResponse.State = false;
+                gResponse.Message = ex.Message;
+                log.LogWriter("DeleteGatePass Exception: " + ex);
+            }
+
+            return StatusCode(StatusCodes.Status200OK, gResponse);
+        }
+        public IActionResult ShowPDFSale(int saleNumber)
+        {
+            try
+            {
+                string urlTemplateView = $"{this.Request.Scheme}://{this.Request.Host}/Template/PDFGatePass?recordID={saleNumber}";
+
+                log.LogWriter("ShowPDFSale url: " + urlTemplateView);
+
+                var pdf = new HtmlToPdfDocument()
+                {
+                    GlobalSettings = new GlobalSettings()
+                    {
+                        PaperSize = PaperKind.A4,
+                        Orientation = Orientation.Portrait
+                    },
+                    Objects = {
+                    new ObjectSettings(){
+                        Page = urlTemplateView
+                    }
+                }
+
+                };
+                var archivoPDF = _converter.Convert(pdf);
+                return File(archivoPDF, "application/pdf");
+            }
+            catch (Exception ex)
+            {
+                log.LogWriter("ShowPDFSale Exception: " + ex);
+                throw;
+            }
+        }
+    }
 }

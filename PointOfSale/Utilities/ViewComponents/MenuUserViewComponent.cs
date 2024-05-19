@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PointOfSale.Business.Contracts;
 using PointOfSale.Model;
+using PointOfSale.Models;
 using System.Security.Claims;
 
 namespace PointOfSale.Utilities.ViewComponents
@@ -21,8 +22,8 @@ namespace PointOfSale.Utilities.ViewComponents
 
 
             string userName = "";
-            string photoUser = "";
             string emailUser = "";
+            int IdUser = 0;
 
             if (claimuser.Identity.IsAuthenticated)
             {
@@ -30,9 +31,10 @@ namespace PointOfSale.Utilities.ViewComponents
                     .Where(c => c.Type == ClaimTypes.Name)
                     .Select(c => c.Value).SingleOrDefault();
 
-                //int IdUser = Convert.ToInt32( claimuser.Claims
-                //    .Where(c => c.Type == ClaimTypes.NameIdentifier)
-                //    .Select(c => c.Value).SingleOrDefault());
+
+                 IdUser = Convert.ToInt32(claimuser.Claims
+                    .Where(c => c.Type == ClaimTypes.NameIdentifier)
+                    .Select(c => c.Value).SingleOrDefault());
 
                 //User user_found = await _userService.GetById(IdUser);
 
@@ -43,9 +45,12 @@ namespace PointOfSale.Utilities.ViewComponents
                 //}
 
                 emailUser = ((ClaimsIdentity)claimuser.Identity).FindFirst("Email").Value;
+
+                //userID = ((ClaimsIdentity)claimuser.Identity).FindFirst("idUsers").Value;
             }
 
             ViewData["userName"] = userName;
+            ViewData["userID"] = IdUser;
             //ViewData["photoUser"] = photoUser;
             ViewData["emailUser"] = emailUser;
 

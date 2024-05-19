@@ -9,117 +9,133 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PointOfSale
 build_property.RootNamespace = PointOfSale
-build_property.ProjectDir = D:\Umais\MyWorking\MES\PointOfSale\
+build_property.ProjectDir = D:\Umais\MyWorking\GatePass\PointOfSale\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Umais\MyWorking\MES\PointOfSale
+build_property.MSBuildProjectDirectory = D:\Umais\MyWorking\GatePass\PointOfSale
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Access/Login.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Access/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Admin/DashBoard.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Admin/DashBoard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaEJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Admin/Users.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Admin/GateDashBoard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2F0ZURhc2hCb2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Admin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Home/Index.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Home/Privacy.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Inventory/Categories.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Inventory/Categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XENhdGVnb3JpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Inventory/Products.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Inventory/Products.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XFByb2R1Y3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Inventory/Stock.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Inventory/Stock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XFN0b2NrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Artical.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Masters/Artical.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xBcnRpY2FsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Bank.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Masters/Bank.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xCYW5rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Colour.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Masters/Colour.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xDb2xvdXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Design.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Masters/Design.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xEZXNpZ24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Size.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Masters/Size.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xTaXplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Masters/Style.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Masters/Style.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xTdHlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Reports/SalesReport.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Reports/GateReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xHYXRlUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Reports/SalesReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xTYWxlc1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Sales/NewSale.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Sales/NewSale.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcTmV3U2FsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Sales/SalesHistory.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Sales/SalesHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcU2FsZXNIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Setup/Customers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dXBcQ3VzdG9tZXJzLmNzaHRtbA==
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Setup/GatePass - Backup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dXBcR2F0ZVBhc3MgLSBCYWNrdXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/Components/MenuUser/Default.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Setup/GatePass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dXBcR2F0ZVBhc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Shared/Components/MenuUser/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVVzZXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/Components/Menu/Default.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Shared/Components/Menu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/Error.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/_Layout2.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Shared/_Layout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Template/PDFSale.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Template/PDFGatePass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVcUERGR2F0ZVBhc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Template/PDFSale.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVcUERGU2FsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/_ViewImports.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/_ViewStart.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/_Layout.cshtml]
+[D:/Umais/MyWorking/GatePass/PointOfSale/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9wugmuo5la

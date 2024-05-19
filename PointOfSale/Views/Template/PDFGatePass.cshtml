@@ -1,0 +1,336 @@
+﻿@model PointOfSale.Models.VMGatePass
+
+@using PointOfSale.Helpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Print GatePass</title>
+    <style>
+        .contenedor {
+            width: 900px !important;
+            height: 842px !important;
+            margin: auto;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        p.title {
+            font-weight: bold;
+        }
+
+        p.title2 {
+            font-weight: bold;
+            color: #03A99F;
+            font-size: 20px;
+        }
+
+        p.text {
+            font-size: 15px;
+            font-weight: 100;
+            color: #858585;
+        }
+
+        p {
+            margin: 0px
+        }
+
+        .tbth {
+            text-align: left;
+        }
+
+        table.tbproductos {
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+
+            table.tbproductos thead tr th {
+                background-color: #03A99F;
+                padding: 10px;
+                font-size: 15px;
+                color: white;
+            }
+
+            table.tbproductos tbody tr td {
+                padding: 10px;
+            }
+
+        .item {
+            font-size: 15px;
+            font-weight: 100;
+            color: #757575;
+        }
+
+        .item-2 {
+            font-size: 15px;
+            font-weight: bold;
+            color: #757575;
+        }
+
+        .item-3 {
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #03A99F;
+            color: white;
+        }
+
+        .td-item {
+            border-bottom: 2px solid #E8E8E8 !important;
+        }
+        /*  table, th, td {
+                                            border: 1px solid;
+                                        }*/
+
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        #tblfield > th, td {
+            padding-top: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-top:0em">
+                    <img src="~/img/img.png" id="logo">
+
+                </td>
+                <td style="text-align:center; padding-top:0em">
+                    <P style="font-size:27PX; font-weight:bold;">TEXTILFORT PRIVATE LIMITED</P>
+                    <P style="font-size:15px">PLOT NO. 23, SECTOR 24, INDUSTRIAL AREA, SHAN CHOWRANGI, KARACHI.</P>
+                    <P>@Model.Status GATE PASS (@Model.idGatePass)</P>
+
+                </td>
+                <td style="text-align:right">
+                    <table style="margin-right:0;margin-left:auto">
+                        <tr>
+                            <td style="padding-top:0em">
+                                <p class="title3"> DATE:</p>
+                            </td>
+                            <td style="padding-top:0em">
+                                <p class="title3">@DateTime.Now.ToString("dd/MM/yyyy")</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:0em">
+                                <p class="title3">SNO.:</p>
+                            </td>
+                            <td style="padding-top:0em">
+                                <p class="title3">@Model.idGatePass</p>
+                            </td>
+                        </tr>
+                        <!--<tr><td>12/12/2023</td></tr>-->
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="center" style="width: 95%;">
+            <tr>
+                <td>
+                    <table style="width: 100%;" id="tblfield">
+                        <tr>
+                            <td>
+                                <p class="title">Name</p>
+                            </td>
+                            <td style="width: 34%; border-bottom: 2px solid black;">
+                                @Model.name
+                            </td>
+
+                            <td style="width:10px;">
+                            </td>
+
+                            <td style="text-align:right;">
+                                <p class="title">Company Name</p>
+                            </td>
+
+                            <td style="width: 34%; border-bottom: 2px solid black;">
+                                @Model.companyName
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="title">Vechical Name</p>
+                            </td>
+
+                            <td style="width:34%; border-bottom: 2px solid black;">
+                                @Model.vechicleType (@Model.vechicleNo)
+                            </td>
+                            <td style="width:10px;">
+                            </td>
+
+                            <td style="text-align:right;">
+                                <p class="title">Created Date</p>
+                            </td>
+
+                            <td style="width: 33%; border-bottom: 2px solid black;">
+                                @Helpers.DatetimeFormat(@Model.dateGP)
+                            </td>
+                        </tr>
+                        @if (@Model.Status.ToUpper() == "RETURNABLE")
+                        {
+                            <tr>
+                                <td>
+                                    <p class="title">Check Out</p>
+                                </td>
+
+                                <td style="width:34%; border-bottom: 2px solid black;">
+                                    @Helpers.DateFormat(@Model.checkOut)
+                                </td>
+                                <td style="width:10px;">
+                                </td>
+
+                                <td style="text-align:right;">
+                                    <p class="title">Check In</p>
+                                </td>
+
+                                <td style="width: 33%; border-bottom: 2px solid black;">
+                                    @Helpers.DateFormat(@Model.checkIn)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+        <br />
+        <br />
+
+        <table class="center tbproductos" style="width:95%">
+            <thead>
+                <tr>
+                    <th class="tbth" style="width:20px">S.No</th>
+                    <th class="tbth" style="width:130px">Name</th>
+                    <th class="tbth" style="width:150px">Description</th>
+
+                    <th class="tbth" style="width:150px">Remarks</th>
+                    @{
+                        <th class="tbth" style="width:70px">UOM</th>
+                        <th class="tbth" style="width:70px">Quantity</th>
+                       
+                        if (Model.itemDetail.Contains("Bags:"))
+                        {
+                            <th class="tbth" style="width:70px">Bags</th>
+                        }
+                        else if (Model.itemDetail.Contains("Cone:"))
+                        {
+                            <th class="tbth" style="width:70px">Cone</th>
+                        }
+                        else
+                        {
+                            <th class="tbth" style="width:70px">Carton</th>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var v1 in Model.item.Split("|"))
+                    {
+
+                        if (v1.Contains(";"))
+                        {
+                            <tr>
+                                <td class="td-item"><p class="item">@v1.Split(";")[0]</p></td>
+                                <td class="td-item"><p class="item">@v1.Split(";")[1]</p></td>
+                                <td class="td-item"><p class="item">@v1.Split(";")[2]</p></td>
+                                <td class="td-item"><p class="item">@v1.Split(";")[3]</p></td>
+                                <td class="td-item"><p class="item">@v1.Split(";")[4]</p></td>
+                                <td class="td-item"><p class="item">@v1.Split(";")[5]</p></td>
+                                <td class="td-item"><p class="item">@v1.Split(";")[6]</p></td>
+                            </tr>
+                        }
+
+
+                    }
+                }
+
+                @*
+
+                <tr>
+                <td colspan="2" rowspan="3">
+                </td>
+                <td class="td-item">
+                <p class="item-2">Sub Total</p>
+                </td>
+                <td class="item-3">
+                <p>USD </p>
+                </td>
+                </tr>
+                <tr>
+                <td class="td-item">
+                <p class="item-2">Total Taxes</p>
+                </td>
+                <td class="item-3">
+                <p>USD </p>
+                </td>
+                </tr>
+                <tr>
+                <td class="item-3">
+                <p>Total</p>
+                </td>
+                <td class="item-3">
+                <p>USD </p>
+                </td>
+                </tr> *@
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table class="center" style="width: 95%;">
+            <tr>
+                <td>
+                    <p>REASON FOR TAKING OUT</p>
+                </td>
+                <td style="width:75%; border-bottom: 1px solid black;">
+                    @Model.remarks
+                </td>
+
+            </tr>
+        </table>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <table class="center" style="width: 95%;">
+            <tr>
+                <td style="width:25%; border-top: 1px solid black;text-align:center">
+                    Checked by Security
+                </td>
+                <td style="width:10%">
+                </td>
+                <td style="width:25%; border-top: 1px solid black;text-align:center">
+                    Approved by
+                </td>
+                <td style="width:10%">
+                </td>
+                <td style="width:25%; border-top: 1px solid black;text-align:center">
+                    Receiver Signature
+                </td>
+
+            </tr>
+        </table>
+
+
+    </div>
+
+</body>
+</html>
+
+

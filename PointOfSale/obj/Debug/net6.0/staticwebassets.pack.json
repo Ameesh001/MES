@@ -1,8 +1,12 @@
 {
   "Files": [
     {
-      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\PointOfSale.bundle.scp.css",
-      "PackagePath": "staticwebassets\\PointOfSale.bundle.scp.css"
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ChequeEase.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ChequeEase.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\css\\chequePrint.css",
+      "PackagePath": "staticwebassets\\css\\chequePrint.css"
     },
     {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\css\\materialdesignicons.min.css",
@@ -25,8 +29,176 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\fonts.rar",
+      "PackagePath": "staticwebassets\\fonts.rar"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\fonts\\JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2",
+      "PackagePath": "staticwebassets\\fonts\\JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\fonts\\KFOlCnqEu92Fr1MmEU9fBBc4.woff2",
+      "PackagePath": "staticwebassets\\fonts\\KFOlCnqEu92Fr1MmEU9fBBc4.woff2"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\fonts\\KFOmCnqEu92Fr1Mu4mxK.woff2",
+      "PackagePath": "staticwebassets\\fonts\\KFOmCnqEu92Fr1Mu4mxK.woff2"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\AlliedBank_PK.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\AlliedBank_PK.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\Bank alfalah.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\Bank alfalah.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\MCB Bank Limited.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\MCB Bank Limited.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\Meezan.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\Meezan.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\Meezanorg.jpeg",
+      "PackagePath": "staticwebassets\\imgOld\\Meezanorg.jpeg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\WhatsApp Image 2024-03-12 at 9.10.46 AM(1).jpeg",
+      "PackagePath": "staticwebassets\\imgOld\\WhatsApp Image 2024-03-12 at 9.10.46 AM(1).jpeg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\WhatsApp Image 2024-03-12 at 9.10.46 AM.jpeg",
+      "PackagePath": "staticwebassets\\imgOld\\WhatsApp Image 2024-03-12 at 9.10.46 AM.jpeg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\cheque.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\cheque.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\digital.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\digital.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\habib bank limited.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\habib bank limited.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\habib bank limitedold.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\habib bank limitedold.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\img.png",
+      "PackagePath": "staticwebassets\\imgOld\\img.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\ui-icons\\ui-icons_222222_256x240.png",
+      "PackagePath": "staticwebassets\\imgOld\\ui-icons\\ui-icons_222222_256x240.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\ui-icons\\ui-icons_444444_256x240.png",
+      "PackagePath": "staticwebassets\\imgOld\\ui-icons\\ui-icons_444444_256x240.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\ui-icons\\ui-icons_454545_256x240.png",
+      "PackagePath": "staticwebassets\\imgOld\\ui-icons\\ui-icons_454545_256x240.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\ui-icons\\ui-icons_555555_256x240.png",
+      "PackagePath": "staticwebassets\\imgOld\\ui-icons\\ui-icons_555555_256x240.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\ui-icons\\ui-icons_777620_256x240.png",
+      "PackagePath": "staticwebassets\\imgOld\\ui-icons\\ui-icons_777620_256x240.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\ui-icons\\ui-icons_777777_256x240.png",
+      "PackagePath": "staticwebassets\\imgOld\\ui-icons\\ui-icons_777777_256x240.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\ui-icons\\ui-icons_cc0000_256x240.png",
+      "PackagePath": "staticwebassets\\imgOld\\ui-icons\\ui-icons_cc0000_256x240.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\ui-icons\\ui-icons_ffffff_256x240.png",
+      "PackagePath": "staticwebassets\\imgOld\\ui-icons\\ui-icons_ffffff_256x240.png"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\world1.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\world1.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\imgOld\\world3.jpg",
+      "PackagePath": "staticwebassets\\imgOld\\world3.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\AlliedBank_PK.jpg",
+      "PackagePath": "staticwebassets\\img\\AlliedBank_PK.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\Bank alfalah.jpg",
+      "PackagePath": "staticwebassets\\img\\Bank alfalah.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\HABIBMETRO.jpg",
+      "PackagePath": "staticwebassets\\img\\HABIBMETRO.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\MCB Bank Limited.jpg",
+      "PackagePath": "staticwebassets\\img\\MCB Bank Limited.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\MCB Islamic - Copy - Copy.jpg",
+      "PackagePath": "staticwebassets\\img\\MCB Islamic - Copy - Copy.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\MCB Islamic.jpg",
+      "PackagePath": "staticwebassets\\img\\MCB Islamic.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\Meezan.jpg",
+      "PackagePath": "staticwebassets\\img\\Meezan.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\Meezanorg.jpeg",
+      "PackagePath": "staticwebassets\\img\\Meezanorg.jpeg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\WhatsApp Image 2024-03-12 at 9.10.46 AM.jpeg",
+      "PackagePath": "staticwebassets\\img\\WhatsApp Image 2024-03-12 at 9.10.46 AM.jpeg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\cheque.jpg",
+      "PackagePath": "staticwebassets\\img\\cheque.jpg"
+    },
+    {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\digital.jpg",
       "PackagePath": "staticwebassets\\img\\digital.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\habib bank limited.jpg",
+      "PackagePath": "staticwebassets\\img\\habib bank limited.jpg"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\habib bank limitedold.jpg",
+      "PackagePath": "staticwebassets\\img\\habib bank limitedold.jpg"
     },
     {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\img\\img.png",
@@ -97,8 +269,24 @@
       "PackagePath": "staticwebassets\\js\\sleek.js"
     },
     {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views.zip",
+      "PackagePath": "staticwebassets\\js\\views.zip"
+    },
+    {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\AdminDashBoard.js",
       "PackagePath": "staticwebassets\\js\\views\\AdminDashBoard.js"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\Cheque.js",
+      "PackagePath": "staticwebassets\\js\\views\\Cheque.js"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\GateDashBoard.js",
+      "PackagePath": "staticwebassets\\js\\views\\GateDashBoard.js"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\GateReport.js",
+      "PackagePath": "staticwebassets\\js\\views\\GateReport.js"
     },
     {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\InventoryCategories.js",
@@ -151,6 +339,10 @@
     {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\SetupCustomers.js",
       "PackagePath": "staticwebassets\\js\\views\\SetupCustomers.js"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\SetupGatePass.js",
+      "PackagePath": "staticwebassets\\js\\views\\SetupGatePass.js"
     },
     {
       "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\js\\views\\adminUsers.js",
@@ -2877,20 +3069,32 @@
       "PackagePath": "staticwebassets\\themeboot\\js\\scripts.js"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.PointOfSale.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\umais\\css.css",
+      "PackagePath": "staticwebassets\\umais\\css.css"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\umais\\materialdesignicons.min.css",
+      "PackagePath": "staticwebassets\\umais\\materialdesignicons.min.css"
+    },
+    {
+      "Id": "D:\\Umais\\MyWorking\\MES\\PointOfSale\\wwwroot\\umais\\moment.min.js",
+      "PackagePath": "staticwebassets\\umais\\moment.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ChequeEase.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.PointOfSale.props",
-      "PackagePath": "build\\PointOfSale.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ChequeEase.props",
+      "PackagePath": "build\\ChequeEase.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.PointOfSale.props",
-      "PackagePath": "buildMultiTargeting\\PointOfSale.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ChequeEase.props",
+      "PackagePath": "buildMultiTargeting\\ChequeEase.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.PointOfSale.props",
-      "PackagePath": "buildTransitive\\PointOfSale.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ChequeEase.props",
+      "PackagePath": "buildTransitive\\ChequeEase.props"
     }
   ],
   "ElementsToRemove": []

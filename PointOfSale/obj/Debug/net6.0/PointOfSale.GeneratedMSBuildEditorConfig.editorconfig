@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PointOfSale
 build_property.RootNamespace = PointOfSale
 build_property.ProjectDir = D:\Umais\MyWorking\MES\PointOfSale\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -24,8 +26,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaEJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Admin/GateDashBoard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2F0ZURhc2hCb2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Admin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Cheque/Cheque.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlcXVlXENoZXF1ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Home/Index.cshtml]
@@ -72,6 +82,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyc1xTdHlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Reports/GateReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xHYXRlUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Reports/SalesReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xTYWxlc1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,6 +100,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Setup/Customers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dXBcQ3VzdG9tZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Setup/GatePass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dXBcR2F0ZVBhc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/Components/MenuUser/Default.cshtml]
@@ -106,6 +124,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Template/PDFCheque.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVcUERGQ2hlcXVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Umais/MyWorking/MES/PointOfSale/Views/Template/PDFGatePass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVcUERGR2F0ZVBhc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Umais/MyWorking/MES/PointOfSale/Views/Template/PDFSale.cshtml]

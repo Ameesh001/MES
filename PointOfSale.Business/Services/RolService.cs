@@ -19,7 +19,8 @@ namespace PointOfSale.Business.Services
         }
         public async Task<List<Rol>> List()
         {
-            IQueryable<Rol> query = await _repository.Query();
+            //IQueryable<Rol> query = await _repository.Query();
+            IQueryable<Rol> query = await _repository.Query(u => u.IsActive == true);
             return query.ToList();
         }
 

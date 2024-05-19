@@ -11,8 +11,18 @@ namespace PointOfSale.Utilities.Automapper
 		public AutoMapperProfile()
 		{
 
-			#region Rol
-			CreateMap<Rol, VMRol>().ReverseMap();
+            #region GatePass
+            CreateMap<Cheque, VMCheque>();
+
+
+            CreateMap<VMCheque, Cheque>();
+    
+            #endregion
+
+
+
+            #region Rol
+            CreateMap<Rol, VMRol>().ReverseMap();
 			#endregion
 
 			#region User
@@ -213,7 +223,40 @@ namespace PointOfSale.Utilities.Automapper
 			#endregion
 
 
+			#region GatePass
+			CreateMap<GatePass, VMGatePass>();
 
+			//.ForMember(destiny =>
+			//	destiny.NameCategory,
+			//	opt => opt.MapFrom(source => source.IdCategory)
+			//)
+
+
+			//.ForMember(destiny =>
+			//	destiny.Price,
+			//	opt => opt.MapFrom(source => Convert.ToString(source.Price, new CultureInfo("es-PE")))
+			//)
+			//.ForMember(destiny =>
+			//	destiny.OpeningBalance,
+			//	opt => opt.MapFrom(source => Convert.ToString(source.OpeningBalance, new CultureInfo("es-PE")))
+			//)
+
+
+			CreateMap<VMGatePass, GatePass>();
+			
+			//.ForMember(destiny =>
+			//	destiny.IdCategory,
+			//	opt => opt.Ignore()
+			//)
+			//.ForMember(destiono =>
+			//	destiono.Price,
+			//	opt => opt.MapFrom(source => Convert.ToString(source.Price, new CultureInfo("es-PE")))
+			//)
+			//.ForMember(destiny =>
+			//	destiny.OpeningBalance,
+			//	opt => opt.MapFrom(source => Convert.ToString(source.OpeningBalance, new CultureInfo("es-PE")))
+			//);
+			#endregion
 
 
 			#region Product
@@ -325,6 +368,52 @@ namespace PointOfSale.Utilities.Automapper
 				);
 
 			CreateMap<DetailSale, VMSalesReport>()
+				.ForMember(destiny =>
+					destiny.RegistrationDate,
+					opt => opt.MapFrom(source => source.IdSaleNavigation.RegistrationDate.Value.ToString("dd/MM/yyyy"))
+				)
+				.ForMember(destiny =>
+					destiny.SaleNumber,
+					opt => opt.MapFrom(source => source.IdSaleNavigation.SaleNumber)
+				)
+				.ForMember(destiny =>
+					destiny.DocumentType,
+					opt => opt.MapFrom(source => source.IdSaleNavigation.IdTypeDocumentSaleNavigation.Description)
+				)
+				.ForMember(destiny =>
+					destiny.DocumentClient,
+					opt => opt.MapFrom(source => source.IdSaleNavigation.CustomerDocument)
+				)
+				.ForMember(destiny =>
+					destiny.ClientName,
+					opt => opt.MapFrom(source => source.IdSaleNavigation.ClientName)
+				)
+				.ForMember(destiny =>
+					destiny.SubTotalSale,
+					opt => opt.MapFrom(source => Convert.ToString(source.IdSaleNavigation.Subtotal.Value, new CultureInfo("es-PE")))
+				)
+				.ForMember(destiny =>
+					destiny.TaxTotalSale,
+					opt => opt.MapFrom(source => Convert.ToString(source.IdSaleNavigation.TotalTaxes.Value, new CultureInfo("es-PE")))
+				)
+				.ForMember(destiny =>
+					destiny.TotalSale,
+					opt => opt.MapFrom(source => Convert.ToString(source.IdSaleNavigation.Total.Value, new CultureInfo("es-PE")))
+				)
+				.ForMember(destiny =>
+					destiny.Product,
+					opt => opt.MapFrom(source => source.DescriptionProduct)
+				)
+				.ForMember(destiny =>
+					destiny.Price,
+					opt => opt.MapFrom(source => Convert.ToString(source.Price.Value, new CultureInfo("es-PE")))
+				)
+				.ForMember(destiny =>
+					destiny.Total,
+					opt => opt.MapFrom(source => Convert.ToString(source.Total.Value, new CultureInfo("es-PE")))
+				);
+
+			CreateMap<DetailSale, VMGatePassReport>()
 				.ForMember(destiny =>
 					destiny.RegistrationDate,
 					opt => opt.MapFrom(source => source.IdSaleNavigation.RegistrationDate.Value.ToString("dd/MM/yyyy"))

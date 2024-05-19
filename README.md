@@ -1,2 +1,2 @@
-# POS
-Point of sale and inventory system
+# GatePass
+GatePass

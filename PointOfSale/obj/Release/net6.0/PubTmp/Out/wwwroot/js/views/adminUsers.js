@@ -96,6 +96,13 @@ const openModal = (model = BASIC_MODEL ) => {
     $("#txtPhoto").val("");
     $("#imgUser").attr("src", `data:image/png;base64,${model.photoBase64}`);
 
+    if (model.idRol == 1) {
+        document.getElementById("cboState").disabled = true;
+    } else {
+
+        document.getElementById("cboState").disabled = false;
+    }
+
     $("#modalData").modal("show")
 
 }
